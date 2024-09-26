@@ -1,0 +1,125 @@
+
+.Container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Hace que ocupe toda la altura de la ventana */
+  background-color: #f8f9fa; /* Fondo gris claro */
+  padding-top: 50px; /* Espacio entre la barra de navegación y el formulario */
+}
+
+.padre {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #ffffff; /* Fondo blanco para el formulario */
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  max-width: 400px; /* Ancho máximo del formulario */
+  width: 100%;
+}
+
+/* Estilos de la imagen de perfil */
+.estilo-profile {
+  border-radius: 50%;
+  height: 120px;
+  width: 120px;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* Estilos de los campos de texto */
+.cajaTexto {
+  background-color: #cccccc40;
+  border-color: slategrey;
+  border-radius: 30px;
+  width: 100%;
+  padding: 15px;
+  border-width: 0px;
+  margin-bottom: 20px;
+}
+
+.cajaTexto:focus {
+  outline: 1px solid cornflowerblue;
+  box-shadow: 0 0 10px cornflowerblue;
+}
+
+/* Estilos del botón de formulario */
+.btnform {
+  background-color: #0d6efd;
+  border-color: slategrey;
+  border-radius: 30px;
+  width: 100%;
+  padding: 15px;
+  border-width: 0px;
+  margin-bottom: 20px;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.btnform:hover {
+  background-color: #0b5ed7; /* Cambia ligeramente el color en hover */
+}
+
+/* Estilos del texto */
+.texto {
+  font-size: 20px;
+  color: slategray;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 5px;
+}
+
+
+.btnswitch {
+  background-color: #0b5ed7;
+  border-radius: 30px;
+  padding: 8px;
+  border-width: 0;
+  color: white;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.btnswitch:hover {
+  background-color: #083ba3; /* Cambia el color en hover */
+}
+
+/* Estilos del header */
+.header {
+  width: 100%; /* Ocupa todo el ancho de la pantalla */
+  background-color: #000000; /* Fondo negro para la barra */
+  padding: 10px 20px; /* Espaciado interno */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+.container-header {
+  display: flex;
+  justify-content: space-between; /* Espacio entre botones y sesión */
+  align-items: center;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 10px; /* Espacio entre los botones de navegación */
+}
+
+.header .btn {
+  background-color: #0d6efd;
+  border: none;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 30px;
+  margin: 0 5px;
+  transition: background-color 0.3s ease;
+}
+
+.header .btn:hover {
+  background-color: #0b5ed7;
+}
+
+.header .login-btn {
+  margin-left: auto; /* Empuja el botón de "Inicio de sesión" a la derecha */
+}
