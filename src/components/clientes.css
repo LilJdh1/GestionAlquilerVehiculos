@@ -1,40 +1,40 @@
-/* Contenedor principal */
+
 .clientes-container {
-    height: 100vh; /* Altura de la ventana */
-    width: 100vw;  /* Ancho de la ventana */
-    margin: 0;     /* Sin márgenes */
-    padding: 40px; /* Espaciado interno */
+    height: 100vh; 
+    width: 100vw;  
+    margin: 0;     
+    padding: 40px; 
     border-radius: 15px;
 
-    /* Imagen de fondo con gradiente */
+    
     background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5)), 
                       url('https://preview.redd.it/4k-wallpaper-muscle-cars-on-track-v0-90d07spoa9sa1.jpg?width=1080&crop=smart&auto=webp&s=c2008edc75e25b0e5d352b0056866eba6ddf33c5');
     background-position: center;
-    background-size: cover; /* Asegúrate de que la imagen cubra todo el contenedor */
+    background-size: cover; 
     background-repeat: no-repeat;
 
-    display: flex; /* Flexbox para centrar los elementos */
-    flex-direction: column; /* Orientación vertical */
-    justify-content: center; /* Centramos los hijos en el eje vertical */
-    align-items: center; /* Centramos los hijos en el eje horizontal */
-    color: #FFD700; /* Texto dorado */
-    text-align: center; /* Alineación del texto al centro */
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    color: #FFD700; 
+    text-align: center; 
 }
 
-/* Título */
+
 .clientes-title {
     font-size: 32px;
     font-weight: bold;
-    color: #FFD700; /* Cambiado a dorado */
+    color: #FFD700; 
     margin-bottom: 30px;
 }
 
-/* Tabla de clientes */
+
 .clientes-table {
     width: 100%;
-    max-width: 800px; /* Máximo ancho para centrar mejor */
+    max-width: 800px;
     border-collapse: collapse;
-    background-color: #222; /* Fondo negro para la tabla */
+    background-color: #222; 
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -47,39 +47,39 @@
 }
 
 .clientes-table th {
-    background-color: #FFD700; /* Fondo dorado para los encabezados */
-    color: black; /* Texto negro para contraste */
+    background-color: #FFD700; 
+    color: black; 
     font-size: 18px;
     text-transform: uppercase;
 }
 
 .clientes-table td {
-    border-bottom: 1px solid #FFD700; /* Bordes dorados */
+    border-bottom: 1px solid #FFD700; 
     font-size: 16px;
-    color: #FFD700; /* Texto dorado */
+    color: #FFD700; 
 }
 
 .clientes-table tr:hover {
-    background-color: rgba(255, 215, 0, 0.1); /* Fondo dorado claro al pasar el ratón */
+    background-color: rgba(255, 215, 0, 0.1); 
 }
 
-/* Mensaje de carga */
+
 .loading {
     font-size: 18px;
-    color: #FFD700; /* Texto dorado */
+    color: #FFD700; 
     text-align: center;
     margin-top: 20px;
 }
 
-/* Mensaje de error */
+
 .error-message {
-    color: #FF6347; /* Rojo para el mensaje de error */
+    color: #FF6347; 
     font-size: 18px;
     text-align: center;
     margin-top: 20px;
 }
 
-/* Mensaje de no clientes */
+
 .no-clientes-message {
     color: #666;
     font-size: 16px;
@@ -87,17 +87,17 @@
     text-align: center;
 }
 
-/* Responsivo */
+
 @media (max-width: 768px) {
     .clientes-container {
-        padding: 20px; /* Espaciado reducido en pantallas pequeñas */
+        padding: 20px; 
     }
 
     .clientes-table {
-        font-size: 14px; /* Tamaño de fuente reducido para la tabla */
+        font-size: 14px; 
     }
 
     .clientes-title {
-        font-size: 26px; /* Tamaño de fuente reducido para el título */
+        font-size: 26px; 
     }
 }

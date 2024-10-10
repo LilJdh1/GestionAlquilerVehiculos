@@ -1,107 +1,106 @@
-/* Estilos generales para centrar el formulario */
+
 .login-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f0f4f8;
-    background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5)), url('https://th.bing.com/th/id/R.801eb488780f460f101406760c5bc6b1?rik=YBeruCtOhoXJWw&riu=http%3a%2f%2fsoyhombrealfa.com%2fwp-content%2fuploads%2f2018%2f01%2fLos-mejores-carros-del-mundo....png&ehk=de3suJvsYDdI5Y0WDgs1tbG0rlJEQu564NDSpEE3CeU%3d&risl=&pid=ImgRaw&r=0');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100vh;
-    width: 100vw;
-  }
-  
-  /* Formulario */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f4f8;
+  background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5)), url('https://th.bing.com/th/id/R.801eb488780f460f101406760c5bc6b1?rik=YBeruCtOhoXJWw&riu=http%3a%2f%2fsoyhombrealfa.com%2fwp-content%2fuploads%2f2018%2f01%2fLos-mejores-carros-del-mundo....png&ehk=de3suJvsYDdI5Y0WDgs1tbG0rlJEQu564NDSpEE3CeU%3d&risl=&pid=ImgRaw&r=0');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100vw;
+}
+
+
+.login-form {
+  background-color: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+
+.input-field {
+  width: 100%;
+  max-width: 350px;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 2px solid #007bff; 
+  font-size: 16px;
+  background-color: transparent;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+.input-field:focus {
+  border-color: #007bff;
+  background-color: #f0f4f8;
+  outline: none;
+}
+
+
+.submit-button {
+  width: 100%;
+  max-width: 350px;
+  padding: 12px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #007bff;
+  background-color: transparent;
+  cursor: pointer;
+  border: 2px solid #007bff;
+  transition: background 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+
+.toggle-button {
+  margin-top: 15px;
+  width: 100%;
+  max-width: 350px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #007bff;
+  background-color: transparent;
+  cursor: pointer;
+  border: 2px solid #007bff;
+  transition: background 0.3s ease;
+}
+
+.toggle-button:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+
+@media (max-width: 768px) {
   .login-form {
-    background-color: white;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    padding: 30px;
   }
-  
+
   h2 {
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: #333;
+    font-size: 20px;
   }
-  
-  /* Estilo de los campos de entrada */
-  .input-field {
-    width: 100%;
-    max-width: 350px;
-    padding: 10px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    border: 2px solid #007bff; /* Mismo borde que los botones */
-    font-size: 16px;
-    background-color: transparent;
-    transition: background 0.3s, border-color 0.3s;
-  }
-  
-  .input-field:focus {
-    border-color: #007bff;
-    background-color: #f0f4f8;
-    outline: none;
-  }
-  
-  /* Botón principal (Iniciar sesión) con el mismo estilo que el botón de alternar */
-  .submit-button {
-    width: 100%;
-    max-width: 350px;
-    padding: 12px;
-    margin-top: 10px;
-    border: none;
-    border-radius: 5px;
-    font-size: 14px;
-    color: #007bff;
-    background-color: transparent;
-    cursor: pointer;
-    border: 2px solid #007bff;
-    transition: background 0.3s ease;
-  }
-  
-  .submit-button:hover {
-    background-color: #007bff;
-    color: white;
-  }
-  
-  /* Botón para alternar entre registro y login */
-  .toggle-button {
-    margin-top: 15px;
-    width: 100%;
-    max-width: 350px;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    font-size: 14px;
-    color: #007bff;
-    background-color: transparent;
-    cursor: pointer;
-    border: 2px solid #007bff;
-    transition: background 0.3s ease;
-  }
-  
-  .toggle-button:hover {
-    background-color: #007bff;
-    color: white;
-  }
-  
-  /* Responsivo */
-  @media (max-width: 768px) {
-    .login-form {
-      padding: 30px;
-    }
-  
-    h2 {
-      font-size: 20px;
-    }
-  }
-  
+}

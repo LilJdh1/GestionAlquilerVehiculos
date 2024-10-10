@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { db } from '../firebase/firebaseConfig';
 import { collection, getDocs } from 'firebase/firestore';
-import './Alquileres.css'; // Asegúrate de tener este archivo CSS
+import './Alquileres.css'; 
 
 const Alquileres = () => {
   const [alquileres, setAlquileres] = useState([]);

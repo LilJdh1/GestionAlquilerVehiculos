@@ -4,7 +4,7 @@ import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } f
 import { db } from '../firebase/firebaseConfig';
 import { collection, addDoc, getDocs } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
-import './login.css';  // Cambié el archivo de estilos para esta interfaz específica
+import './login.css';  
 
 const auth = getAuth();
 

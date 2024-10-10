@@ -1,4 +1,4 @@
-/* Contenedor principal */
+
 .mis-rentas-container {
     display: flex;
     flex-direction: column;
@@ -15,18 +15,18 @@
     width: 100vw;
 }
 
-/* Título principal */
+
 .titulo {
     font-size: 40px;
     font-weight: 700;
-    color: #e5c100; /* Dorado */
+    color: #e5c100;
     margin-bottom: 40px;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
 
-/* Lista de vehículos con diseño de tarjetas */
+
 .vehiculos-list {
     display: flex;
     flex-wrap: wrap;
@@ -36,24 +36,24 @@
     width: 100%;
 }
 
-/* Tarjeta de vehículo */
+
 .vehiculo-card {
-    background-color: #111; /* Negro */
+    background-color: #111; 
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
     overflow: hidden;
     width: 320px;
-    border: 2px solid #e5c100; /* Borde dorado */
+    border: 2px solid #e5c100; 
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .vehiculo-card:hover {
     transform: translateY(-12px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.85);
-    border-color: #b29400; /* Borde dorado más oscuro al pasar el mouse */
+    border-color: #b29400; 
 }
 
-/* Imagen del vehículo */
+
 .vehiculo-imagen {
     width: 100%;
     height: 220px;
@@ -61,7 +61,7 @@
     border-bottom: 2px solid #f0f2f5;
 }
 
-/* Información del vehículo */
+
 .vehiculo-info {
     padding: 20px;
     text-align: left;
@@ -69,22 +69,22 @@
 
 .vehiculo-nombre {
     font-size: 22px;
-    color: #e5c100; /* Dorado */
+    color: #e5c100; 
     font-weight: 600;
     margin-bottom: 8px;
 }
 
 .vehiculo-descripcion {
     font-size: 16px;
-    color: #ccc; /* Gris claro */
+    color: #ccc; 
     margin-bottom: 20px;
     line-height: 1.5;
 }
 
-/* Botón de devolver */
+
 .devolver-button {
-    background-color: #e5c100; /* Dorado */
-    color: #111; /* Negro */
+    background-color: #e5c100; 
+    color: #111; 
     padding: 12px 20px;
     font-size: 16px;
     border: none;
@@ -95,14 +95,14 @@
 }
 
 .devolver-button:hover {
-    background-color: #b29400; /* Dorado más oscuro */
+    background-color: #b29400; 
     transform: scale(1.02);
 }
 
-/* Mensaje de devolución */
+
 .mensaje {
-    background-color: #e5c100; /* Dorado */
-    color: #111; /* Negro */
+    background-color: #e5c100; 
+    color: #111; 
     padding: 15px 25px;
     border-radius: 8px;
     margin-top: 30px;
@@ -112,7 +112,7 @@
     transition: opacity 0.3s ease;
 }
 
-/* Mensaje de no rentas */
+
 .no-rentas {
     font-size: 20px;
     color: #999;
@@ -120,7 +120,7 @@
     margin-top: 40px;
 }
 
-/* Responsivo */
+
 @media (max-width: 768px) {
     .vehiculos-list {
         gap: 20px;

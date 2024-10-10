@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { db } from "../firebase/firebaseConfig";
 import { collection, getDocs, query, where } from "firebase/firestore";
-import './clientes.css';  // Asegúrate de que el archivo CSS está vinculado correctamente
+import './clientes.css';  
 
 const Clientes = () => {
   const [clientes, setClientes] = useState([]);

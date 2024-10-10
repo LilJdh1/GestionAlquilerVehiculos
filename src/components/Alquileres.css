@@ -1,57 +1,56 @@
-/* Asegurarse de que el contenedor principal cubra toda la pantalla */
+
 .contenedor-alquileres {
-    height: 100vh; /* Altura de la ventana */
-    width: 100vw;  /* Ancho de la ventana */
-    margin: 0;     /* Sin márgenes */
-    padding: 20px; /* Espaciado interno */
-    border-radius: 8px;
-    
-    /* Imagen de fondo con gradiente */
-    background-image: linear-gradient(rgb(7, 7, 7), rgba(0, 0, 0, 0.5)), 
-                      url('https://preview.redd.it/4k-wallpaper-muscle-cars-on-track-v0-90d07spoa9sa1.jpg?width=1080&crop=smart&auto=webp&s=c2008edc75e25b0e5d352b0056866eba6ddf33c5');
-    background-position: center;
-    background-size: cover; /* Asegúrate de que la imagen cubra todo el contenedor */
-    background-repeat: no-repeat;
-    display: flex; /* Flexbox para centrar los elementos */
-    flex-direction: column; /* Orientación vertical */
-    align-items: center; /* Centramos los hijos en el eje horizontal */
-    justify-content: center; /* Centramos los hijos en el eje vertical */
-  }
+  height: 100vh; 
+  width: 100vw;  
+  margin: 0;    
+  padding: 20px; 
+  border-radius: 8px;
   
-  /* Estilo para el encabezado */
-  .encabezado-alquileres {
-    text-align: center;
-    margin-bottom: 20px;
-    color: white; /* Cambiar el color del texto para mejorar la visibilidad */
-  }
-  
-  /* Lista de alquileres */
-  .lista-alquileres {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    width: 100%; /* Asegura que la lista ocupa todo el ancho */
-    max-width: 800px; /* Máximo ancho para la lista */
-  }
-  
-  /* Estilo para las tarjetas de alquiler */
-  .tarjeta-alquiler {
-    padding: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco con opacidad */
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  
-  /* Efecto al pasar el mouse sobre la tarjeta */
-  .tarjeta-alquiler:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Estilo para el ID de alquiler */
-  .alquiler-id {
-    color: #007BFF; /* Color de encabezado */
-    margin-bottom: 10px;
-  }
-  
+ 
+  background-image: linear-gradient(rgb(7, 7, 7), rgba(0, 0, 0, 0.5)), 
+                    url('https://preview.redd.it/4k-wallpaper-muscle-cars-on-track-v0-90d07spoa9sa1.jpg?width=1080&crop=smart&auto=webp&s=c2008edc75e25b0e5d352b0056866eba6ddf33c5');
+  background-position: center;
+  background-size: cover; 
+  background-repeat: no-repeat;
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center; 
+}
+
+
+.encabezado-alquileres {
+  text-align: center;
+  margin-bottom: 20px;
+  color: white; 
+}
+
+
+.lista-alquileres {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%; 
+  max-width: 800px; 
+}
+
+
+.tarjeta-alquiler {
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.8);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+
+.tarjeta-alquiler:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+.alquiler-id {
+  color: #007BFF; 
+  margin-bottom: 10px;
+}

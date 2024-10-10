@@ -4,7 +4,7 @@ import { Link, Route, useNavigate, Routes } from 'react-router-dom';
 import Clientes from './clientes';
 import InventarioVehiculos from './inventarioVehiculos';
 import Alquileres from './Alquileres';
-import './administrador.css'; // Importa los estilos adecuados
+import './administrador.css'; 
 
 const auth = getAuth();
 const Administrador = () => {

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { db } from "../firebase/firebaseConfig";
 import { addDoc, collection, doc, getDocs, deleteDoc, updateDoc } from "firebase/firestore";
 import { getStorage, ref as storageRef, uploadBytes, getDownloadURL } from "firebase/storage";
-import './inventarioVehiculos.css';  // Asegúrate de que tu archivo CSS esté vinculado correctamente
+import './inventarioVehiculos.css';  
 
 const storage = getStorage();
 
