@@ -1,4 +1,4 @@
-// EstadisticasAlquileres.jsx
+
 import React, { useState, useEffect } from 'react';
 import { db } from '../firebase/firebaseConfig';
 import { collection, getDocs, query, where } from 'firebase/firestore';
