@@ -1,97 +1,98 @@
-/* Contenedor principal del registro */
 .registro-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; /* Altura mínima para asegurar que ocupa toda la pantalla */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)), 
+    min-height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), 
                       url('https://content.app-sources.com/s/7922247355803329/uploads/Images/blue-sport-sedan-parked-yard-3446700.jpg?format=webp');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     width: 100vw;
-    padding: 20px; /* Espaciado alrededor del contenedor */
+    padding: 20px;
 }
 
-/* Estilo del formulario de registro */
 .registro-form {
-    background-color: #ffffff; /* Fondo blanco */
-    border-radius: 10px;
-    padding: 30px; /* Ajuste del padding */
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
     text-align: center;
-    max-width: 400px; /* Ancho máximo del formulario */
-    width: 100%; /* El formulario ocupa todo el ancho disponible */
+    max-width: 350px;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 15px; /* Espacio entre elementos */
+    gap: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-/* Estilo del encabezado */
 h2 {
-    font-size: 26px; /* Tamaño del texto */
+    font-size: 24px;
     font-weight: bold;
-    color: #007bff;
-    margin-bottom: 20px; /* Espacio debajo del encabezado */
+    color: #0056b3;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    text-align: center;
 }
 
-/* Estilo de las etiquetas */
 .registro-form label {
-    font-size: 14px;
-    color: #555; /* Color gris para las etiquetas */
+    font-size: 15px;
+    color: #333;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-bottom: 10px; /* Ajuste del margen */
+    margin-bottom: 10px;
     width: 100%;
+    font-weight: 500;
 }
 
-/* Estilo de los campos de entrada */
 .registro-form input {
     width: 100%;
-    padding: 12px; /* Padding para mayor comodidad */
-    border-radius: 5px;
-    border: 2px solid #007bff; /* Borde azul */
-    font-size: 16px;
-    background-color: #f7f9fc; /* Fondo suave */
-    transition: background 0.3s, border-color 0.3s;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 15px;
+    background-color: #f7f9fc;
+    transition: background 0.3s, border-color 0.3s, box-shadow 0.3s;
+    text-align: center;
 }
 
-/* Efecto en el enfoque de los campos de entrada */
 .registro-form input:focus {
-    border-color: #0056b3; /* Azul más oscuro al enfocar */
-    background-color: #e3f2fd; /* Fondo claro al enfocar */
+    border-color: #007bff;
+    background-color: #e9f5ff;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
     outline: none;
 }
 
-/* Estilo del botón de registro */
 .registro-button {
-    background-color: #007bff; /* Azul */
-    color: white; /* Texto blanco */
-    padding: 12px 15px; /* Espaciado del botón */
+    background-color: #007bff;
+    color: white;
+    padding: 10px 12px;
     text-decoration: none;
-    border-radius: 5px;
-    font-size: 16px;
-    border: none; /* Sin borde */
-    cursor: pointer; /* Cambia el cursor al pasar el ratón */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
+    border-radius: 25px;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.2);
+    width: 100%;
+    text-align: center;
 }
 
-/* Efecto de hover en el botón de registro */
 .registro-button:hover {
-    background-color: #0056b3; /* Azul más oscuro al pasar el ratón */
-    transform: scale(1.05); /* Efecto de aumento al pasar el ratón */
+    background-color: #0056b3;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3);
 }
 
-/* Estilos responsivos */
 @media (max-width: 768px) {
     .registro-form {
-        padding: 20px; /* Ajuste del padding para pantallas pequeñas */
-        max-width: 90%; /* Ajuste del ancho máximo */
+        padding: 20px;
     }
 
     .registro-button {
-        font-size: 16px;
+        font-size: 14px;
         padding: 10px;
     }
 }
