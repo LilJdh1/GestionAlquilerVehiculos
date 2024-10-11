@@ -1,28 +1,31 @@
-/* Contenedor principal de vehículos */
+
 .vehiculos-container {
     padding: 20px;
-    min-height: 100vh; /* Altura mínima para llenar la ventana */
-    text-align: center; /* Centra el texto dentro del contenedor */
-    background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5)), url('https://content.app-sources.com/s/7922247355803329/uploads/Images/blue-sport-sedan-parked-yard-3446700.jpg?format=webp');
+    min-height: 100vh; 
+    text-align: center; 
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 1), 
+        rgba(0, 0, 0, 0.5)
+    ), 
+    url('https://content.app-sources.com/s/7922247355803329/uploads/Images/blue-sport-sedan-parked-yard-3446700.jpg?format=webp');
     background-position: center;
-    background-size: cover; /* Asegúrate de que la imagen cubra todo el contenedor */
+    background-size: cover;
     background-repeat: no-repeat;
-    height: 100vh; /* Altura completa de la ventana */
-    width: 100vw; /* Ancho completo de la ventana */
+    background-attachment: fixed;
 }
 
-/* Título principal */
+
 h1 {
-    font-size: 36px; /* Aumentado para resaltar */
+    font-size: 36px; 
     font-weight: 700;
-    color: #B0C4DE; /* Azul claro */
+    color: #B0C4DE; 
     margin-bottom: 30px;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
 
-/* Lista de vehículos */
+
 .vehiculos-list {
     display: flex;
     flex-wrap: wrap;
@@ -30,9 +33,9 @@ h1 {
     gap: 20px;
 }
 
-/* Tarjeta de vehículo */
+
 .vehiculo-item {
-    background-color: #111; /* Negro */
+    background-color: #111; 
     border-radius: 12px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
     overflow: hidden;
@@ -47,32 +50,32 @@ h1 {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
 }
 
-/* Título del vehículo */
+
 .vehiculo-item h2 {
-    font-size: 20px; /* Aumentado para mejor legibilidad */
-    color: #B0C4DE; /* Azul claro */
+    font-size: 20px;
+    color: #B0C4DE; 
     margin-bottom: 8px;
 }
 
-/* Descripción del vehículo */
+
 .vehiculo-item p {
     font-size: 14px;
-    color: #B0C4DE; /* Cambiado a azul claro */
+    color: #B0C4DE; 
     margin-bottom: 15px;
     line-height: 1.4;
 }
 
-/* Imagen del vehículo */
+
 .vehiculo-imagen {
     width: 100%;
     height: 160px;
     object-fit: cover;
     border-radius: 8px;
     margin-bottom: 15px;
-    border: 1px solid #B0C4DE; /* Borde azul claro */
+    border: 1px solid #B0C4DE; 
 }
 
-/* Contenedor de botones */
+
 .button-container {
     display: flex;
     justify-content: center;
@@ -80,10 +83,9 @@ h1 {
     margin-top: 10px;
 }
 
-/* Botón de rentar */
+
 .rentar-button {
-    background-color: #B0C4DE; /* Azul claro */
-    color: #111; /* Negro */
+    background-color: #B0C4DE; 
     padding: 8px 15px;
     font-size: 14px;
     border: none;
@@ -93,69 +95,69 @@ h1 {
 }
 
 .rentar-button:hover {
-    background-color: #8B9DC3; /* Azul más oscuro */
+    background-color: #8B9DC3; 
     transform: scale(1.05);
 }
 
-/* Formulario de alquiler */
+
 .formulario-alquiler {
-    background-color: rgba(34, 34, 34, 0.9); /* Fondo oscuro con algo de transparencia */
+    background-color: rgba(34, 34, 34, 0.9); 
     padding: 30px;
     border-radius: 10px;
-    width: 100%; /* Asegúrate de que use todo el ancho disponible */
-    max-width: 600px; /* Ancho máximo */
-    color: #B0C4DE; /* Texto azul claro */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Sombra */
-    margin: 20px auto; /* Centrando el formulario */
-    position: relative; /* Asegúrate de que se pueda superponer correctamente */
-    z-index: 1; /* Asegúrate de que esté por encima del fondo */
+    width: 100%; 
+    max-width: 600px; 
+    color: #B0C4DE; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); 
+    margin: 20px auto;
+    position: relative;
+    z-index: 1; 
 }
 
-/* Título del formulario */
+
 .formulario-alquiler h2 {
-    font-size: 1.8rem; /* Tamaño del título */
+    font-size: 1.8rem; 
     margin-bottom: 20px;
-    text-align: center; /* Centrar el título */
-    color: #B0C4DE; /* Texto azul claro */
+    text-align: center; 
+    color: #B0C4DE; 
 }
 
-/* Estilo para las etiquetas del formulario */
+
 .formulario-alquiler label {
     display: block;
     margin-bottom: 10px;
-    font-size: 1.1rem; /* Tamaño de fuente */
-    color: #B0C4DE; /* Texto azul claro */
+    font-size: 1.1rem; 
+    color: #B0C4DE; 
 }
 
-/* Estilo de los campos del formulario */
+
 .formulario-alquiler input,
 .formulario-alquiler select,
 .formulario-alquiler textarea {
     width: 100%;
     padding: 12px;
     margin-top: 5px;
-    background-color: #333; /* Fondo de los campos */
-    border: 1px solid #B0C4DE; /* Borde azul claro */
-    color: #B0C4DE; /* Color de texto azul claro */
-    border-radius: 5px; /* Bordes redondeados */
+    background-color: #333; 
+    border: 1px solid #B0C4DE; 
+    color: #B0C4DE; 
+    border-radius: 5px; 
 }
 
-/* Ajuste del tamaño del textarea */
+
 textarea {
     resize: vertical;
 }
 
-/* Contenedor para botones */
+
 .formulario-alquiler .form-buttons {
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
 }
 
-/* Estilo de los botones */
+
 .formulario-alquiler .btn {
-    background-color: #B0C4DE; /* Azul claro */
-    color: #111; /* Negro */
+    background-color: #B0C4DE; 
+    color: #111; 
     border: none;
     padding: 10px 15px;
     cursor: pointer;
@@ -165,19 +167,19 @@ textarea {
 }
 
 .formulario-alquiler .btn:hover {
-    background-color: #8B9DC3; /* Azul más oscuro */
+    background-color: #8B9DC3; /
 }
 
-/* Botón cancelar */
+
 .formulario-alquiler .btn-cancelar {
-    background-color: #FF6347; /* Rojo */
+    background-color: #FF6347; 
 }
 
 .formulario-alquiler .btn-cancelar:hover {
-    background-color: #cc2900; /* Rojo más oscuro */
+    background-color: #cc2900; 
 }
 
-/* Responsivo */
+
 @media (max-width: 768px) {
     .vehiculos-list {
         flex-direction: column;
@@ -192,7 +194,7 @@ textarea {
 
     .formulario-alquiler {
         padding: 20px;
-        width: 90%; /* Usa el 90% en pantallas pequeñas */
+        width: 90%; 
     }
 
     .formulario-alquiler h2 {
