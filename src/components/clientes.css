@@ -15,14 +15,14 @@
     flex-direction: column; 
     justify-content: center; 
     align-items: center; 
-    color: #B0C4DE; /* Azul claro para el texto */
+    color: #B0C4DE; 
     text-align: center; 
 }
 
 .clientes-title {
     font-size: 32px;
     font-weight: bold;
-    color: #B0C4DE; /* Azul claro para el título */
+    color: #B0C4DE; 
     margin-bottom: 30px;
 }
 
@@ -30,10 +30,10 @@
     width: 100%;
     max-width: 800px;
     border-collapse: collapse;
-    background-color: rgba(30, 30, 30, 0.8); /* Fondo oscuro para la tabla */
+    background-color: rgba(30, 30, 30, 0.8); 
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
 }
 
 .clientes-table th,
@@ -43,25 +43,25 @@
 }
 
 .clientes-table th {
-    background-color: #4682B4; /* Azul más oscuro para el encabezado */
-    color: #FFFFFF; /* Texto blanco para mejor contraste */
+    background-color: #4682B4; 
+    color: #FFFFFF; 
     font-size: 18px;
     text-transform: uppercase;
 }
 
 .clientes-table td {
-    border-bottom: 1px solid #B0C4DE; /* Borde en azul claro */
+    border-bottom: 1px solid #B0C4DE; 
     font-size: 16px;
-    color: #B0C4DE; /* Texto en azul claro */
+    color: #B0C4DE; 
 }
 
 .clientes-table tr:hover {
-    background-color: rgba(70, 130, 180, 0.2); /* Fondo de fila más oscuro al pasar el mouse */
+    background-color: rgba(70, 130, 180, 0.2); 
 }
 
 .loading {
     font-size: 18px;
-    color: #B0C4DE; /* Color de carga en azul claro */
+    color: #B0C4DE; 
     text-align: center;
     margin-top: 20px;
 }
@@ -74,7 +74,7 @@
 }
 
 .no-clientes-message {
-    color: #999; /* Un gris más oscuro para un mejor contraste */
+    color: #999; 
     font-size: 16px;
     margin-top: 20px;
     text-align: center;

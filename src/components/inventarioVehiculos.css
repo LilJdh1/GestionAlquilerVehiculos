@@ -1,6 +1,6 @@
 body {
     background-color: #000; 
-    color: #B0C4DE; /* Azul claro para el texto */
+    color: #B0C4DE; 
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
@@ -34,10 +34,10 @@ html {
 
 .inventario-title {
     font-size: 2.5rem;
-    color: #B0C4DE; /* Azul claro para el título */
+    color: #B0C4DE; 
     text-align: center;
     margin-bottom: 20px;
-    border-bottom: 2px solid #B0C4DE; /* Borde en azul claro */
+    border-bottom: 2px solid #B0C4DE; 
     padding-bottom: 10px;
 }
 
@@ -58,35 +58,36 @@ html {
 .vehiculos-table {
     width: 100%;
     border-collapse: collapse;
-    color: #B0C4DE; /* Azul claro para la tabla */
+    color: #B0C4DE; 
+    background-color: rgba(17, 17, 17, 0.5);
 }
 
 .vehiculos-table th, .vehiculos-table td {
     padding: 12px;
     text-align: center;
-    border: 1px solid #B0C4DE; /* Borde en azul claro */
+    border: 1px solid #B0C4DE; 
 }
 
 .vehiculos-table th {
-    background-color: #4682B4; /* Azul más oscuro para el encabezado */
-    color: #FFFFFF; /* Texto blanco para mejor contraste */
+    background-color: #4682B4; 
+    color: #FFFFFF; 
     font-size: 1.2rem;
 }
 
 .vehiculos-table td {
-    background-color: #111; /* Fondo oscuro para las celdas */
+    background-color: rgba(17, 17, 17, 0.7);
 }
 
 .vehiculo-imagen {
     width: 100%; 
     height: auto; 
-    border: 1px solid #B0C4DE; /* Borde en azul claro */
+    border: 1px solid #B0C4DE; 
     object-fit: cover; 
 }
 
 button {
-    background-color: #4682B4; /* Azul oscuro para los botones */
-    color: #FFFFFF; /* Texto blanco */
+    background-color: #4682B4; 
+    color: #FFFFFF; 
     border: none;
     padding: 10px 15px;
     cursor: pointer;
@@ -96,51 +97,51 @@ button {
 }
 
 button:hover {
-    background-color: #5F9EA0; /* Azul más claro al pasar el mouse */
+    background-color: #5F9EA0; 
 }
 
 .editar-btn {
-    background-color: #4682B4; /* Azul oscuro para el botón de editar */
+    background-color: #4682B4; 
 }
 
 .eliminar-btn {
-    background-color: #FF6347; /* Rojo para el botón de eliminar */
+    background-color: #FF6347; 
 }
 
 .eliminar-btn:hover {
-    background-color: #cc2900; /* Rojo más oscuro al pasar el mouse */
+    background-color: #cc2900; 
 }
 
 .form-container {
-    background-color: rgba(30, 30, 30, 0.8); /* Fondo oscuro con un poco de transparencia */
+    background-color: rgba(30, 30, 30, 0.8);
     padding: 20px;
     border-radius: 10px;
     width: 100%;
     max-width: 600px;
-    color: #B0C4DE; /* Azul claro para el texto del formulario */
+    color: #B0C4DE;
 }
 
 .form-container h2 {
     font-size: 1.8rem;
     margin-bottom: 20px;
     text-align: center;
-    color: #B0C4DE; /* Azul claro para el título del formulario */
+    color: #B0C4DE; 
 }
 
 .vehiculo-form label {
     display: block;
     margin-bottom: 15px;
     font-size: 1.1rem;
-    color: #B0C4DE; /* Asegurando que las etiquetas sean de color azul claro */
+    color: #B0C4DE; 
 }
 
 .vehiculo-form input, .vehiculo-form select, .vehiculo-form textarea {
     width: 100%;
     padding: 10px;
     margin-top: 5px;
-    background-color: #333; /* Fondo oscuro para los inputs */
-    border: 1px solid #B0C4DE; /* Borde en azul claro */
-    color: #B0C4DE; /* Texto en azul claro */
+    background-color: #333;
+    border: 1px solid #B0C4DE; 
+    color: #B0C4DE; 
     border-radius: 5px;
 }
 
@@ -176,3 +177,4 @@ textarea {
         height: auto;
     }
 }
+

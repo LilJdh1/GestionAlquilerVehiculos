@@ -17,7 +17,7 @@
 .titulo {
     font-size: 40px;
     font-weight: 700;
-    color: #ADD8E6; /* Azul claro */
+    color: #ADD8E6; 
     margin-bottom: 40px;
     text-align: center;
     text-transform: uppercase;
@@ -39,14 +39,14 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
     overflow: hidden;
     width: 320px;
-    border: 2px solid #ADD8E6; /* Borde azul claro */
+    border: 2px solid #ADD8E6; 
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .vehiculo-card:hover {
     transform: translateY(-12px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.85);
-    border-color: #87CEFA; /* Azul más oscuro */
+    border-color: #87CEFA; 
 }
 
 .vehiculo-imagen {
@@ -63,7 +63,7 @@
 
 .vehiculo-nombre {
     font-size: 22px;
-    color: #ADD8E6; /* Azul claro */
+    color: #ADD8E6; 
     font-weight: 600;
     margin-bottom: 8px;
 }
@@ -76,7 +76,7 @@
 }
 
 .devolver-button {
-    background-color: #ADD8E6; /* Azul claro */
+    background-color: #ADD8E6; 
     color: #111; 
     padding: 12px 20px;
     font-size: 16px;
@@ -88,12 +88,12 @@
 }
 
 .devolver-button:hover {
-    background-color: #87CEFA; /* Azul más oscuro */
+    background-color: #87CEFA; 
     transform: scale(1.02);
 }
 
 .mensaje {
-    background-color: #ADD8E6; /* Azul claro */
+    background-color: #ADD8E6; 
     color: #111; 
     padding: 15px 25px;
     border-radius: 8px;
