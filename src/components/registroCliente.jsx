@@ -1,4 +1,8 @@
 import React,{useState} from "react";
+import './registroCliente.css'; 
+
+
+
 const RegistroCliente = ({handleRegistro}) =>{
     const [nombre, setNombre] = useState('');
     const [apellido, setApellido] = useState('');
