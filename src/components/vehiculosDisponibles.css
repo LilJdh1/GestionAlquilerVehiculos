@@ -1,28 +1,28 @@
-
+/* Contenedor principal de vehículos */
 .vehiculos-container {
     padding: 20px;
-    min-height: 100vh;
-    text-align: center; 
-    background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5)), url('https://preview.redd.it/4k-wallpaper-muscle-cars-on-track-v0-90d07spoa9sa1.jpg?width=1080&crop=smart&auto=webp&s=c2008edc75e25b0e5d352b0056866eba6ddf33c5');
+    min-height: 100vh; /* Altura mínima para llenar la ventana */
+    text-align: center; /* Centra el texto dentro del contenedor */
+    background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5)), url('https://content.app-sources.com/s/7922247355803329/uploads/Images/blue-sport-sedan-parked-yard-3446700.jpg?format=webp');
     background-position: center;
-    background-size: cover;
+    background-size: cover; /* Asegúrate de que la imagen cubra todo el contenedor */
     background-repeat: no-repeat;
-    height: 100vh;
-    width: 100vw;
+    height: 100vh; /* Altura completa de la ventana */
+    width: 100vw; /* Ancho completo de la ventana */
 }
 
-
+/* Título principal */
 h1 {
-    font-size: 36px; 
+    font-size: 36px; /* Aumentado para resaltar */
     font-weight: 700;
-    color: #e5c100; 
+    color: #B0C4DE; /* Azul claro */
     margin-bottom: 30px;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
 
-
+/* Lista de vehículos */
 .vehiculos-list {
     display: flex;
     flex-wrap: wrap;
@@ -30,9 +30,9 @@ h1 {
     gap: 20px;
 }
 
-
+/* Tarjeta de vehículo */
 .vehiculo-item {
-    background-color: #111; 
+    background-color: #111; /* Negro */
     border-radius: 12px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
     overflow: hidden;
@@ -47,32 +47,32 @@ h1 {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
 }
 
-
+/* Título del vehículo */
 .vehiculo-item h2 {
-    font-size: 20px; 
-    color: #e5c100; 
+    font-size: 20px; /* Aumentado para mejor legibilidad */
+    color: #B0C4DE; /* Azul claro */
     margin-bottom: 8px;
 }
 
-
+/* Descripción del vehículo */
 .vehiculo-item p {
     font-size: 14px;
-    color: #ccc;
+    color: #B0C4DE; /* Cambiado a azul claro */
     margin-bottom: 15px;
     line-height: 1.4;
 }
 
-
+/* Imagen del vehículo */
 .vehiculo-imagen {
     width: 100%;
     height: 160px;
     object-fit: cover;
     border-radius: 8px;
     margin-bottom: 15px;
-    border: 1px solid #e5c100; 
+    border: 1px solid #B0C4DE; /* Borde azul claro */
 }
 
-
+/* Contenedor de botones */
 .button-container {
     display: flex;
     justify-content: center;
@@ -80,10 +80,10 @@ h1 {
     margin-top: 10px;
 }
 
-
+/* Botón de rentar */
 .rentar-button {
-    background-color: #e5c100; 
-    color: #111; 
+    background-color: #B0C4DE; /* Azul claro */
+    color: #111; /* Negro */
     padding: 8px 15px;
     font-size: 14px;
     border: none;
@@ -93,49 +93,91 @@ h1 {
 }
 
 .rentar-button:hover {
-    background-color: #b29400; 
+    background-color: #8B9DC3; /* Azul más oscuro */
     transform: scale(1.05);
 }
 
-
-.no-disponible {
-    font-size: 14px;
-    color: #ff4d4f;
-    font-weight: bold;
+/* Formulario de alquiler */
+.formulario-alquiler {
+    background-color: rgba(34, 34, 34, 0.9); /* Fondo oscuro con algo de transparencia */
+    padding: 30px;
+    border-radius: 10px;
+    width: 100%; /* Asegúrate de que use todo el ancho disponible */
+    max-width: 600px; /* Ancho máximo */
+    color: #B0C4DE; /* Texto azul claro */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Sombra */
+    margin: 20px auto; /* Centrando el formulario */
+    position: relative; /* Asegúrate de que se pueda superponer correctamente */
+    z-index: 1; /* Asegúrate de que esté por encima del fondo */
 }
 
-
-.mensaje {
-    background-color: #52c41a;
-    color: white;
-    padding: 12px 20px;
-    border-radius: 6px;
-    margin-top: 15px;
-    font-size: 16px;
-    font-weight: 500;
-    text-align: center;
+/* Título del formulario */
+.formulario-alquiler h2 {
+    font-size: 1.8rem; /* Tamaño del título */
+    margin-bottom: 20px;
+    text-align: center; /* Centrar el título */
+    color: #B0C4DE; /* Texto azul claro */
 }
 
+/* Estilo para las etiquetas del formulario */
+.formulario-alquiler label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.1rem; /* Tamaño de fuente */
+    color: #B0C4DE; /* Texto azul claro */
+}
 
-.volver-button {
-    background-color: #e5c100; 
-    color: #111; 
-    padding: 10px 15px;
+/* Estilo de los campos del formulario */
+.formulario-alquiler input,
+.formulario-alquiler select,
+.formulario-alquiler textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    background-color: #333; /* Fondo de los campos */
+    border: 1px solid #B0C4DE; /* Borde azul claro */
+    color: #B0C4DE; /* Color de texto azul claro */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+/* Ajuste del tamaño del textarea */
+textarea {
+    resize: vertical;
+}
+
+/* Contenedor para botones */
+.formulario-alquiler .form-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* Estilo de los botones */
+.formulario-alquiler .btn {
+    background-color: #B0C4DE; /* Azul claro */
+    color: #111; /* Negro */
     border: none;
-    border-radius: 6px;
-    font-size: 14px;
+    padding: 10px 15px;
     cursor: pointer;
-    margin-top: 15px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    display: inline-block; 
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
-.volver-button:hover {
-    background-color: #b29400; 
-    transform: scale(1.05);
+.formulario-alquiler .btn:hover {
+    background-color: #8B9DC3; /* Azul más oscuro */
 }
 
+/* Botón cancelar */
+.formulario-alquiler .btn-cancelar {
+    background-color: #FF6347; /* Rojo */
+}
 
+.formulario-alquiler .btn-cancelar:hover {
+    background-color: #cc2900; /* Rojo más oscuro */
+}
+
+/* Responsivo */
 @media (max-width: 768px) {
     .vehiculos-list {
         flex-direction: column;
@@ -148,306 +190,17 @@ h1 {
         max-width: 85%;
     }
 
-    .vehiculo-imagen {
-        height: 140px;
-    }
-
-    .rentar-button {
-        font-size: 12px;
-        padding: 6px 12px;
-    }
-}
-
-
-
-body {
-    background-color: #000; 
-    color: #FFD700; 
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    height: 100%; 
-    min-height: 100vh;
-}
-
-html {
-    height: 100%; 
-}
-
-.inventario-container {
-    width: 100vw; 
-    min-height: 100vh; 
-    display: flex;
-    flex-direction: column;
-    justify-content: center; 
-    align-items: center; 
-    padding: 20px;
-    background-image: linear-gradient(
-        rgba(0, 0, 0, 1), 
-        rgba(0, 0, 0, 0.5)
-    ), 
-    url('https://preview.redd.it/4k-wallpaper-muscle-cars-on-track-v0-90d07spoa9sa1.jpg?width=1080&crop=smart&auto=webp&s=c2008edc75e25b0e5d352b0056866eba6ddf33c5');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed; 
-}
-
-.inventario-title {
-    font-size: 2.5rem;
-    color: #FFD700;
-    text-align: center;
-    margin-bottom: 20px;
-    border-bottom: 2px solid #FFD700;
-    padding-bottom: 10px;
-}
-
-.inventario-layout {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    width: 100%;
-    max-width: 1200px; 
-    justify-content: center;
-    align-items: center; 
-}
-
-.tabla-vehiculos {
-    overflow-x: auto;
-}
-
-.vehiculos-table {
-    width: 100%;
-    border-collapse: collapse;
-    color: #FFD700;
-}
-
-.vehiculos-table th, .vehiculos-table td {
-    padding: 12px;
-    text-align: center;
-    border: 1px solid #FFD700;
-}
-
-.vehiculos-table th {
-    background-color: #333;
-    color: #FFD700;
-    font-size: 1.2rem;
-}
-
-.vehiculos-table td {
-    background-color: #111;
-}
-
-.vehiculo-imagen {
-    width: 100%; 
-    height: auto;
-    border: 1px solid #FFD700;
-    object-fit: cover; 
-}
-
-
-button {
-    background-color: #FFD700;
-    color: #000;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 1rem;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #b8860b; 
-}
-
-.editar-btn {
-    background-color: #FFD700;
-}
-
-.eliminar-btn {
-    background-color: #FF6347; 
-}
-
-.eliminar-btn:hover {
-    background-color: #cc2900; 
-}
-
-
-.form-container {
-    background-color: #222;
-    padding: 20px;
-    border-radius: 10px;
-    width: 100%;
-    max-width: 600px;
-    color: #FFD700;
-}
-
-.form-container h2 {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.vehiculo-form label {
-    display: block;
-    margin-bottom: 15px;
-    font-size: 1.1rem;
-}
-
-.vehiculo-form input, .vehiculo-form select, .vehiculo-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    background-color: #333;
-    border: 1px solid #FFD700;
-    color: #FFD700;
-    border-radius: 5px;
-}
-
-textarea {
-    resize: vertical;
-}
-
-.form-buttons {
-    display: flex;
-    justify-content: space-between;
-    gap: 15px;
-}
-
-.agregar-vehiculo-btn, .subir-imagen-btn {
-    width: 48%;
-}
-
-
-@media (max-width: 768px) {
-    .form-container, .vehiculos-table {
-        width: 100%;
-    }
-
-    .form-buttons {
-        flex-direction: column;
-    }
-
-    .agregar-vehiculo-btn, .subir-imagen-btn {
-        width: 100%;
-    }
-
-    .vehiculo-imagen {
-        max-width: 80px; 
-        height: auto; 
-    }
-}
-
-
-
-
-
-body {
-    background-color: #000; 
-    color: #FFD700; 
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    height: 100%;
-    min-height: 100vh;
-}
-
-html {
-    height: 100%; 
-}
-
-
-.formulario-alquiler {
-    background-color: #222;
-    padding: 30px;
-    border-radius: 10px;
-    width: 100%;
-    max-width: 600px; 
-    color: #FFD700; 
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); 
-    margin: 20px auto; 
-}
-
-
-.formulario-alquiler h2 {
-    font-size: 1.8rem; 
-    margin-bottom: 20px;
-    text-align: center; 
-    color: #FFD700; 
-}
-
-
-.formulario-alquiler label {
-    display: block; 
-    margin-bottom: 10px; 
-    font-size: 1.1rem; 
-}
-
-
-.formulario-alquiler input,
-.formulario-alquiler select,
-.formulario-alquiler textarea {
-    width: 100%; 
-    padding: 12px; 
-    margin-top: 5px; 
-    background-color: #333; 
-    border: 1px solid #FFD700; 
-    color: #FFD700; 
-    border-radius: 5px; 
-}
-
-
-textarea {
-    resize: vertical;
-}
-
-
-.formulario-alquiler .form-buttons {
-    display: flex; 
-    justify-content: space-between;
-    margin-top: 20px;
-}
-
-
-.formulario-alquiler .btn {
-    background-color: #FFD700; 
-    color: #000; 
-    border: none;
-    padding: 10px 15px; 
-    cursor: pointer; 
-    font-size: 1rem; 
-    border-radius: 5px; 
-    transition: background-color 0.3s ease; 
-}
-
-.formulario-alquiler .btn:hover {
-    background-color: #b8860b; 
-}
-
-
-.formulario-alquiler .btn-cancelar {
-    background-color: #FF6347; 
-}
-
-.formulario-alquiler .btn-cancelar:hover {
-    background-color: #cc2900; 
-}
-
-
-@media (max-width: 768px) {
     .formulario-alquiler {
         padding: 20px;
+        width: 90%; /* Usa el 90% en pantallas pequeñas */
     }
 
     .formulario-alquiler h2 {
-        font-size: 1.5rem; 
+        font-size: 1.5rem;
     }
 
     .formulario-alquiler .btn {
         font-size: 0.9rem;
-        padding: 8px 10px; 
+        padding: 8px 10px;
     }
 }

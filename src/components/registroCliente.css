@@ -1,0 +1,97 @@
+/* Contenedor principal del registro */
+.registro-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Altura mínima para asegurar que ocupa toda la pantalla */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)), 
+                      url('https://content.app-sources.com/s/7922247355803329/uploads/Images/blue-sport-sedan-parked-yard-3446700.jpg?format=webp');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    padding: 20px; /* Espaciado alrededor del contenedor */
+}
+
+/* Estilo del formulario de registro */
+.registro-form {
+    background-color: #ffffff; /* Fondo blanco */
+    border-radius: 10px;
+    padding: 30px; /* Ajuste del padding */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+    text-align: center;
+    max-width: 400px; /* Ancho máximo del formulario */
+    width: 100%; /* El formulario ocupa todo el ancho disponible */
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espacio entre elementos */
+}
+
+/* Estilo del encabezado */
+h2 {
+    font-size: 26px; /* Tamaño del texto */
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 20px; /* Espacio debajo del encabezado */
+}
+
+/* Estilo de las etiquetas */
+.registro-form label {
+    font-size: 14px;
+    color: #555; /* Color gris para las etiquetas */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 10px; /* Ajuste del margen */
+    width: 100%;
+}
+
+/* Estilo de los campos de entrada */
+.registro-form input {
+    width: 100%;
+    padding: 12px; /* Padding para mayor comodidad */
+    border-radius: 5px;
+    border: 2px solid #007bff; /* Borde azul */
+    font-size: 16px;
+    background-color: #f7f9fc; /* Fondo suave */
+    transition: background 0.3s, border-color 0.3s;
+}
+
+/* Efecto en el enfoque de los campos de entrada */
+.registro-form input:focus {
+    border-color: #0056b3; /* Azul más oscuro al enfocar */
+    background-color: #e3f2fd; /* Fondo claro al enfocar */
+    outline: none;
+}
+
+/* Estilo del botón de registro */
+.registro-button {
+    background-color: #007bff; /* Azul */
+    color: white; /* Texto blanco */
+    padding: 12px 15px; /* Espaciado del botón */
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    border: none; /* Sin borde */
+    cursor: pointer; /* Cambia el cursor al pasar el ratón */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
+}
+
+/* Efecto de hover en el botón de registro */
+.registro-button:hover {
+    background-color: #0056b3; /* Azul más oscuro al pasar el ratón */
+    transform: scale(1.05); /* Efecto de aumento al pasar el ratón */
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .registro-form {
+        padding: 20px; /* Ajuste del padding para pantallas pequeñas */
+        max-width: 90%; /* Ajuste del ancho máximo */
+    }
+
+    .registro-button {
+        font-size: 16px;
+        padding: 10px;
+    }
+}
