@@ -4,7 +4,7 @@ import SeleccionarVehiculo from './seleccionarVehiculo';
 import DetallesAlquiler from './detallesDelAlquiler';
 import { db } from '../firebase/firebaseConfig';
 import { addDoc, collection } from 'firebase/firestore';
-import './RegistrarAlquiler.css';  // Asegúrate de que el CSS esté enlazado correctamente
+import './registrarAlquiler.css';  
 
 const RegistrarAlquiler = () => {
     const [clienteSeleccionado, setClienteSeleccionado] = useState('');

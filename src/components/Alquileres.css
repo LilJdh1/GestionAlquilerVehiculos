@@ -1,4 +1,4 @@
-
+/* Contenedor principal de alquileres */
 .contenedor-alquileres {
   height: 100vh; 
   width: 100vw;  
@@ -9,63 +9,61 @@
   align-items: center;
   justify-content: center;
   
- 
   background-image: linear-gradient(rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.85)), 
-                    url('https://preview.redd.it/4k-wallpaper-muscle-cars-on-track-v0-90d07spoa9sa1.jpg?width=1080&crop=smart&auto=webp&s=c2008edc75e25b0e5d352b0056866eba6ddf33c5');
+                    url('https://content.app-sources.com/s/7922247355803329/uploads/Images/blue-sport-sedan-parked-yard-3446700.jpg?format=webp');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6); 
 }
 
-
+/* Encabezado de alquileres */
 .encabezado-alquileres {
   text-align: center;
   margin-bottom: 20px;
-  color: #FFD700; 
+  color: #00BFFF; /* Azul brillante */
   font-size: 2.5rem; 
   font-family: 'Roboto', sans-serif; 
   font-weight: bold; 
   letter-spacing: 1.5px;
   text-transform: uppercase; 
-  border-bottom: 3px solid rgba(255, 215, 0, 0.8); 
+  border-bottom: 3px solid rgba(0, 191, 255, 0.8); /* Azul medio */
   padding-bottom: 12px;
   text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.8); 
 }
 
-
+/* Lista de alquileres */
 .lista-alquileres {
   display: flex;
   flex-direction: column;
   gap: 25px;
   width: 100%;
   max-width: 850px;
-  background-color: rgba(20, 20, 20, 0.9); 
+  background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro */
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7); 
 }
 
-
+/* Tarjeta de alquiler */
 .tarjeta-alquiler {
   padding: 20px;
-  border: 1px solid rgba(255, 215, 0, 0.4); 
+  border: 1px solid rgba(0, 191, 255, 0.4); /* Azul medio */
   border-radius: 8px;
-  background-color: rgba(30, 30, 30, 0.95); 
-  color: #FFD700;
+  background-color: rgba(0, 0, 0, 0.95); /* Fondo oscuro */
+  color: #00BFFF; /* Azul brillante */
   transition: transform 0.2s ease, box-shadow 0.3s ease;
 }
 
-
 .tarjeta-alquiler:hover {
   transform: translateY(-5px); 
-  box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4); 
-  background-color: rgba(15, 15, 15, 0.95); 
+  box-shadow: 0 10px 30px rgba(0, 191, 255, 0.4); /* Azul medio */
+  background-color: rgba(0, 0, 0, 0.95); 
 }
 
-
+/* ID de alquiler */
 .alquiler-id {
-  color: #FFD700; 
+  color: #00BFFF; /* Azul brillante */
   margin-bottom: 14px;
   font-weight: 700;
   font-size: 1.4rem;
@@ -73,17 +71,17 @@
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
 }
 
-
+/* Detalle de alquiler */
 .alquiler-detalle {
-  color: #E5E5E5; 
+  color: #E5E5E5; /* Color claro para contraste */
   font-size: 1.1rem;
   line-height: 1.6; 
 }
 
-
+/* Botón de alquiler */
 .boton-alquiler {
-  background-color: #FFD700;
-  color: #000;
+  background-color: #00BFFF; /* Azul brillante */
+  color: #000; /* Texto negro */
   border: none;
   padding: 12px 20px;
   cursor: pointer;
@@ -95,11 +93,11 @@
 }
 
 .boton-alquiler:hover {
-  background-color: #b8860b; 
-  box-shadow: 0 6px 20px rgba(255, 215, 0, 0.5); 
+  background-color: #1E90FF; /* Azul medio al pasar el ratón */
+  box-shadow: 0 6px 20px rgba(0, 191, 255, 0.5); /* Azul medio */
 }
 
-
+/* Responsivo */
 @media (max-width: 768px) {
   .contenedor-alquileres {
     padding: 15px;

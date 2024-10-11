@@ -1,61 +1,72 @@
-/* Estilos generales del contenedor */
+
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-image: linear-gradient(to bottom right, #e0eafc, #cfdef3);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)),
+                    url('https://content.app-sources.com/s/7922247355803329/uploads/Images/blue-sport-sedan-parked-yard-3446700.jpg?format=webp');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   padding: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+  height: 100vh;
+  width: 100vw;
 }
 
-/* Estilos del contenido de bienvenida */
+
 .welcome-content {
   text-align: center;
-  max-width: 700px;
-  background-color: #ffffff;
-  padding: 40px;
-  border-radius: 15px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  max-width: 850px;
+  background-color: rgba(240, 248, 255, 0.9); 
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
-/* Estilo del título */
+
 .welcome-title {
-  font-size: 2.8em;
-  color: #003366;
-  margin-bottom: 15px;
+  font-size: 2.5rem;
+  color: #003366; 
+  margin-bottom: 20px;
   font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2);
+  border-bottom: 3px solid rgba(0, 51, 102, 0.8); 
+  padding-bottom: 12px;
 }
 
-/* Estilo de la descripción */
+
 .welcome-description {
-  font-size: 1.2em;
+  font-size: 1.1rem;
   color: #555555;
   line-height: 1.6;
   margin-bottom: 20px;
 }
 
-/* Estilo de las instrucciones */
+
 .welcome-instruction {
-  font-size: 1.1em;
-  color: #777777;
+  font-size: 1.1rem;
+  color: #003366; 
   margin-bottom: 25px;
 }
 
-/* Estilos de los botones */
+
 .buttons .button {
-  font-size: 1.3em;
+  font-size: 1.3rem;
   padding: 15px 40px;
   color: #ffffff;
-  background-color: #0056b3;
+  background-color: #007BFF; 
   border: none;
-  border-radius: 5px;
-  text-decoration: none;
+  border-radius: 6px;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.5);
 }
 
-/* Efecto hover para el botón */
+
 .buttons .button:hover {
-  background-color: #004494;
-  transform: translateY(-2px);
+  background-color: #0056b3;
+  transform: translateY(-5px);
 }
