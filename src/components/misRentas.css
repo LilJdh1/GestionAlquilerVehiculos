@@ -1,3 +1,4 @@
+/* MisRentas.css */
 .mis-rentas-container {
     display: flex;
     flex-direction: column;
@@ -6,10 +7,9 @@
     padding: 40px;
     min-height: 100vh;
     background-color: #f0f2f5;
-    background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5)), url('https://content.app-sources.com/s/7922247355803329/uploads/Images/blue-sport-sedan-parked-yard-3446700.jpg?format=webp');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)), url('https://content.app-sources.com/s/7922247355803329/uploads/Images/blue-sport-sedan-parked-yard-3446700.jpg?format=webp');
     background-position: center;
     background-size: cover;
-    background-repeat: no-repeat;
     height: 100vh;
     width: 100vw;
 }
@@ -17,7 +17,7 @@
 .titulo {
     font-size: 40px;
     font-weight: 700;
-    color: #ADD8E6; 
+    color: #ADD8E6;
     margin-bottom: 40px;
     text-align: center;
     text-transform: uppercase;
@@ -34,19 +34,19 @@
 }
 
 .vehiculo-card {
-    background-color: #111; 
+    background-color: #111;
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
     overflow: hidden;
     width: 320px;
-    border: 2px solid #ADD8E6; 
+    border: 2px solid #ADD8E6;
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .vehiculo-card:hover {
     transform: translateY(-12px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.85);
-    border-color: #87CEFA; 
+    border-color: #87CEFA;
 }
 
 .vehiculo-imagen {
@@ -59,25 +59,27 @@
 .vehiculo-info {
     padding: 20px;
     text-align: left;
+    background-color: transparent;
 }
 
 .vehiculo-nombre {
     font-size: 22px;
-    color: #ADD8E6; 
+    color: #ADD8E6;
     font-weight: 600;
     margin-bottom: 8px;
+    background-color: transparent;
 }
 
 .vehiculo-descripcion {
     font-size: 16px;
-    color: #ccc; 
+    color: #ccc;
     margin-bottom: 20px;
     line-height: 1.5;
 }
 
 .devolver-button {
-    background-color: #ADD8E6; 
-    color: #111; 
+    background-color: #ADD8E6;
+    color: #111;
     padding: 12px 20px;
     font-size: 16px;
     border: none;
@@ -88,13 +90,13 @@
 }
 
 .devolver-button:hover {
-    background-color: #87CEFA; 
+    background-color: #87CEFA;
     transform: scale(1.02);
 }
 
 .mensaje {
-    background-color: #ADD8E6; 
-    color: #111; 
+    background-color: #ADD8E6;
+    color: #111;
     padding: 15px 25px;
     border-radius: 8px;
     margin-top: 30px;
@@ -106,7 +108,7 @@
 
 .no-rentas {
     font-size: 20px;
-    color: #999;
+    color: white;
     text-align: center;
     margin-top: 40px;
 }

@@ -49,6 +49,7 @@ h1 {
     font-size: 20px;
     color: #B0C4DE; 
     margin-bottom: 8px;
+    background-color: transparent;
 }
 
 .vehiculo-item p {

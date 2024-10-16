@@ -126,6 +126,7 @@ button:hover {
     margin-bottom: 20px;
     text-align: center;
     color: #B0C4DE; 
+    background-color: transparent;
 }
 
 .vehiculo-form label {

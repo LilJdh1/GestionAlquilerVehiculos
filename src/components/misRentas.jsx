@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { db } from '../firebase/firebaseConfig';
-import { collection, getDocs, doc, updateDoc, onSnapshot, getDoc, deleteDoc } from 'firebase/firestore';
+import { collection, getDocs, deleteDoc, onSnapshot, getDoc, updateDoc, doc} from 'firebase/firestore';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
-import './misRentas.css';
-
+import './misRentas.css'
 
 const auth = getAuth();
 
@@ -43,6 +42,7 @@ const MisRentas = () => {
   const handleDevolver = async (vehiculo) => {
     const vehiculoRef = doc(db, 'vehiculos', vehiculo.id);
     const vehiculoActualizado = { ...vehiculo, disponible: true };
+
     await updateDoc(vehiculoRef, vehiculoActualizado);
 
     // Elimina la renta del vehículo
@@ -54,6 +54,7 @@ const MisRentas = () => {
     }
 
     setMensaje(`El vehículo ${vehiculo.marca} ${vehiculo.modelo} ha sido devuelto`);
+
     setTimeout(() => {
       setMensaje('');
     }, 3000);

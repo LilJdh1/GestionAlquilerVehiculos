@@ -30,6 +30,7 @@
   border-bottom: 3px solid rgba(135, 206, 235, 0.8); 
   padding-bottom: 12px;
   text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.8); 
+  background-color: transparent;
 }
 
 
@@ -69,6 +70,7 @@
   font-size: 1.4rem;
   letter-spacing: 0.8px;
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+  background-color: transparent;
 }
 
 

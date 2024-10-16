@@ -11,7 +11,7 @@ import Alquileres from './components/Alquileres';
 import { auth } from './firebase/firebaseConfig';
 import InventarioVehiculos from './components/inventarioVehiculos';
 import Bienvenida from './components/paginaInicio';
-import RegistroCliente from './components/registroCliente';
+import RegistrarCliente from './components/registrarCliente';
 import RegistrarAlquiler from './components/registrarAlquiler';
 import EstadisticasAlquileres from './components/estadisticasAlquileres';
 
@@ -52,7 +52,7 @@ function App() {
         <Route path="/admin/vehiculos" element={usuario ? <InventarioVehiculos /> : <Navigate to="/" />} />
         <Route path="/admin/usuarios" element={usuario ? <Clientes /> : <Navigate to="/" />} />
         <Route path="/admin/alquileres" element={usuario ? <Alquileres /> : <Navigate to="/" />} />
-        <Route path="/admin/registrar-cliente" element={usuario ? <RegistroCliente /> : <Navigate to="/" />} />
+        <Route path="/admin/registrar-cliente" element={usuario ? <RegistrarCliente /> : <Navigate to="/" />} />
         <Route path="/admin/registrar-alquiler" element={usuario ? <RegistrarAlquiler /> : <Navigate to="/" />} />
         <Route path="/admin/estadisticas-alquileres" element={usuario ? <EstadisticasAlquileres /> : <Navigate to="/" />} />
         <Route path="/cliente/vehiculos" element={usuario ? <VehiculosDisponibles /> : <Navigate to="/" />} />

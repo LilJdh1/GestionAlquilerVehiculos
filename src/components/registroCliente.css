@@ -1,4 +1,5 @@
-.registro-container {
+/* registroCliente.css */
+.registrar-cliente-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,8 +12,19 @@
     width: 100vw;
     padding: 20px;
 }
-
-.registro-form {
+h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #0056b3;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    text-align: center;
+    background-color: white;
+    transition: background 0.3s, border-color 0.3s, box-shadow 0.3s;
+    border-radius: 10px;
+}
+.registrar-cliente-form {
     background-color: white;
     padding: 30px;
     border-radius: 15px;
@@ -26,17 +38,9 @@
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-h2 {
-    font-size: 24px;
-    font-weight: bold;
-    color: #0056b3;
-    text-transform: uppercase;
-    margin-bottom: 15px;
-    letter-spacing: 1px;
-    text-align: center;
-}
 
-.registro-form label {
+
+.registrar-cliente-form label {
     font-size: 15px;
     color: #333;
     display: flex;
@@ -47,7 +51,7 @@ h2 {
     font-weight: 500;
 }
 
-.registro-form input {
+.registrar-cliente-form input {
     width: 100%;
     padding: 10px;
     border-radius: 8px;
@@ -58,14 +62,14 @@ h2 {
     text-align: center;
 }
 
-.registro-form input:focus {
+.registrar-cliente-form input:focus {
     border-color: #007bff;
     background-color: #e9f5ff;
     box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
     outline: none;
 }
 
-.registro-button {
+button {
     background-color: #007bff;
     color: white;
     padding: 10px 12px;
@@ -80,18 +84,25 @@ h2 {
     text-align: center;
 }
 
-.registro-button:hover {
+button:hover {
     background-color: #0056b3;
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3);
 }
 
+.mensaje {
+    margin-top: 15px;
+    color: green;
+    font-weight: bold;
+}
+
+/* Media Queries */
 @media (max-width: 768px) {
-    .registro-form {
+    .registrar-cliente-form {
         padding: 20px;
     }
 
-    .registro-button {
+    button {
         font-size: 14px;
         padding: 10px;
     }

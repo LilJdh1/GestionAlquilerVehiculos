@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { db } from "../firebase/firebaseConfig";
-import { collection, getDocs, query, where } from "firebase/firestore";
-import './clientes.css';  
+import React, { useState, useEffect } from 'react';
+import { db } from '../firebase/firebaseConfig';
+import { collection, getDocs } from 'firebase/firestore';
+import './clientes.css'; 
 
 const Clientes = () => {
   const [clientes, setClientes] = useState([]);
@@ -12,17 +12,16 @@ const Clientes = () => {
     const fetchClientes = async () => {
       try {
         const usuariosCollection = collection(db, 'usuarios');
-        const q = query(usuariosCollection, where("rol", "==", "cliente"));
-        const querySnapshot = await getDocs(q);
-        const clientes = querySnapshot.docs.map((doc) => ({
-          id: doc.id,
-          ...doc.data(),
-        }));
-        setClientes(clientes);
-        setCargando(false);
+        const querySnapshot = await getDocs(usuariosCollection);
+        const clientesData = querySnapshot.docs
+          .filter((doc) => doc.data().rol === 'cliente')
+          .map((doc) => ({ id: doc.id, ...doc.data() }));
+        setClientes(clientesData);
       } catch (error) {
         setError(error);
         console.error("Error al recuperar clientes:", error);
+      } finally {
+        setCargando(false);
       }
     };
     fetchClientes();
@@ -54,7 +53,7 @@ const Clientes = () => {
               <tr key={cliente.id}>
                 <td>{cliente.nombre}</td>
                 <td>{cliente.apellido}</td>
-                <td>{cliente.correo}</td>
+                <td>{cliente.email}</td>
                 <td>{cliente.telefono}</td>
               </tr>
             ))}

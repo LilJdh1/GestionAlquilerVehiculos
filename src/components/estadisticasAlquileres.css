@@ -1,0 +1,55 @@
+/* estadisticasAlquileres.css */
+.estadisticas-container {
+    height: 100vh; 
+  width: 100vw;  
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  background-image: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.75)),  
+                    url('https://content.app-sources.com/s/7922247355803329/uploads/Images/blue-sport-sedan-parked-yard-3446700.jpg?format=webp');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6); 
+  }
+  
+  .estadisticas-title {
+    font-size: 24px;
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: transparent;
+  }
+  
+  .estadisticas-section {
+    margin-bottom: 20px;
+  }
+  
+  .estadisticas-section h3 {
+    font-size: 20px;
+    color: #007BFF;
+    margin-bottom: 10px;
+  }
+  
+  .estadisticas-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .estadisticas-list li {
+    padding: 8px 12px;
+    background-color: transparent;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    transition: background-color 0.3s;
+  }
+  
+  .estadisticas-list li:hover {
+    background-color: #f0f8ff;
+  }
+  
