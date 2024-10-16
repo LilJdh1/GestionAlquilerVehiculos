@@ -3,8 +3,8 @@ import SeleccionarCliente from './seleccionarCliente';
 import SeleccionarVehiculo from './seleccionarVehiculo';
 import DetallesAlquiler from './detallesDelAlquiler';
 import { db } from '../firebase/firebaseConfig';
-import { addDoc, collection,updateDoc,doc } from 'firebase/firestore';
-import './registrarAlquiler.css';  
+import { addDoc, collection, updateDoc, doc } from 'firebase/firestore';
+import './registrarAlquiler.css';
 
 const RegistrarAlquiler = () => {
   const [clienteSeleccionado, setClienteSeleccionado] = useState('');
@@ -20,17 +20,23 @@ const RegistrarAlquiler = () => {
   };
 
   const handleDetallesCompletados = (detalles) => {
+    console.log('Detalles recibidos:', detalles);
     setDetallesAlquiler(detalles);
   };
 
   const handleRegistrarAlquiler = async () => {
+    if (!detallesAlquiler.fechaInicio || !detallesAlquiler.fechaFin) {
+      alert('Por favor, selecciona ambas fechas.');
+      return;
+    }
+
     try {
       const rentasCollection = collection(db, 'rentas');
       await addDoc(rentasCollection, {
         cliente: clienteSeleccionado,
         vehiculo: vehiculoSeleccionado,
-        fechaInicio: detallesAlquiler.fechaInicio,
-        fechaFin: detallesAlquiler.fechaFin,
+        fechaInicio: new Date(detallesAlquiler.fechaInicio),
+        fechaFin: new Date(detallesAlquiler.fechaFin),
       });
 
       const vehiculoRef = doc(db, 'vehiculos', vehiculoSeleccionado);

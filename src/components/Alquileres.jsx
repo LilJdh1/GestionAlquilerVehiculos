@@ -48,11 +48,11 @@ const Alquileres = () => {
         {alquileres.map((alquiler) => (
           <div className="tarjeta-alquiler" key={alquiler.id}>
             <h2 className="alquiler-id">Alquiler ID: {alquiler.id}</h2>
-            <p><strong>Usuario:</strong> {alquiler.usuario}</p>
-            <p><strong>Vehículo:</strong> {alquiler.vehiculo}</p>
-            <p><strong>Fecha de alquiler:</strong> {new Date(alquiler.fechaAlquiler).toLocaleDateString()}</p>
-            <p><strong>Fecha de devolución:</strong> {new Date(alquiler.fechaDevolucion).toLocaleDateString()}</p>
-            <p><strong>Número de licencia:</strong> {alquiler.numeroLicencia}</p>
+              <p><strong>Usuario:</strong> {alquiler.usuario}</p>
+              <p><strong>Vehículo:</strong> {alquiler.vehiculo}</p>
+              <p><strong>Fecha de alquiler:</strong> {alquiler.fechaInicio ? new Date(alquiler.fechaInicio.seconds * 1000).toLocaleDateString() : 'Fecha no disponible'}</p>
+              <p><strong>Fecha de devolución:</strong> {alquiler.fechaFin ? new Date(alquiler.fechaFin.seconds * 1000).toLocaleDateString() : 'Fecha no disponible'}</p>
+              <p><strong>Número de licencia:</strong> {alquiler.numeroLicencia}</p>
             <button onClick={() => handleEliminarAlquiler(alquiler.id)} className="eliminar-alquiler-button">Eliminar Alquiler</button>
           </div>
         ))}

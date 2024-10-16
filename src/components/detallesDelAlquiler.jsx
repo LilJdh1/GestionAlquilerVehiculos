@@ -19,7 +19,7 @@ const DetallesAlquiler = ({ onDetallesCompletados }) => {
         Fecha de Fin:
         <input type="date" value={fechaFin} onChange={(e) => setFechaFin(e.target.value)} />
       </label>
-      <button type="submit">Registrar Alquiler</button>
+      <button type="submit">Guardar Detalles</button>
     </form>
   );
 };
