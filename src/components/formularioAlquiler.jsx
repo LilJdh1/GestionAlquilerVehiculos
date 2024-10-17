@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 
-
 const FormularioAlquiler = ({ vehiculo, handleRenta }) => {
   const [numeroLicencia, setNumeroLicencia] = useState('');
   const [ubicacion, setUbicacion] = useState('');
@@ -20,7 +19,7 @@ const FormularioAlquiler = ({ vehiculo, handleRenta }) => {
 
   return (
     <div className="formulario-container">
-      <h2>Formulario de Alquiler de Vehículo</h2>
+      <h2 className='title'>Formulario de Alquiler de Vehículo</h2>
       <form onSubmit={handleSubmit} className="formulario-alquiler">
         <div className="form-group">
           <label htmlFor="numeroLicencia">Número de Licencia:</label>

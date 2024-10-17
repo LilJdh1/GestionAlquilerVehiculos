@@ -40,7 +40,8 @@ const InventarioVehiculos = () => {
         disponible: true,
       });
       resetFormulario();
-      window.location.reload();
+      // Update the vehicle state
+      setVehiculos([...vehiculos, { marca, modelo, año, descripcion, tamaño, imagen: imagenUrl, disponible: true }]);
     } catch (error) {
       console.error("Error al agregar vehículo:", error);
     }
@@ -61,7 +62,7 @@ const InventarioVehiculos = () => {
     setVehiculoEditar(vehiculo);
     setMarca(vehiculo.marca);
     setModelo(vehiculo.modelo);
-    setAño(vehiculo.año);
+    setAño( vehiculo.año);
     setDescripcion(vehiculo.descripcion);
     setTamaño(vehiculo.tamaño);
     setImagenUrl(vehiculo.imagen);
@@ -78,8 +79,9 @@ const InventarioVehiculos = () => {
         tamaño,
         imagen: imagenUrl,
       });
+      // Update the edited vehicle state
+      setVehiculos(vehiculos.map(v => (v.id === vehiculoEditar.id ? { ...v, marca, modelo, año, descripcion, tamaño, imagen: imagenUrl } : v)));
       resetFormulario();
-      window.location.reload();
     } catch (error) {
       console.error("Error al editar vehículo:", error);
     }
@@ -89,7 +91,8 @@ const InventarioVehiculos = () => {
     try {
       const vehiculoRef = doc(collection(db, 'vehiculos'), vehiculo.id);
       await deleteDoc(vehiculoRef);
-      window.location.reload();
+      // Update the vehicle state
+      setVehiculos(vehiculos.filter(v => v.id !== vehiculo.id));
     } catch (error) {
       console.error("Error al eliminar vehículo:", error);
     }

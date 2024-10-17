@@ -57,6 +57,7 @@ h1 {
     color: #B0C4DE; 
     margin-bottom: 15px;
     line-height: 1.4;
+    background-color: transparent;
 }
 
 .vehiculo-imagen {
