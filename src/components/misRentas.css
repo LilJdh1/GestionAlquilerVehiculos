@@ -1,10 +1,9 @@
-/* MisRentas.css */
 .mis-rentas-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 40px;
+    justify-content: flex-start; 
+    padding: 0; 
     min-height: 100vh;
     background-color: #f0f2f5;
     background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)), url('https://content.app-sources.com/s/7922247355803329/uploads/Images/blue-sport-sedan-parked-yard-3446700.jpg?format=webp');
@@ -12,6 +11,35 @@
     background-size: cover;
     height: 100vh;
     width: 100vw;
+}
+
+
+header {
+    background-color: #0c0d0e; 
+    padding: 15px 0;
+    margin-bottom: 20px;
+    width: 100%;
+    position: sticky; 
+    top: 0; 
+    z-index: 1000; 
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+nav a {
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #ADD8E6; /* Azul claro */
 }
 
 .titulo {
@@ -77,9 +105,10 @@
     line-height: 1.5;
 }
 
+
 .devolver-button {
-    background-color: #ADD8E6;
-    color: #111;
+    background-color: white; 
+    color: #1E90FF; 
     padding: 12px 20px;
     font-size: 16px;
     border: none;
@@ -90,7 +119,7 @@
 }
 
 .devolver-button:hover {
-    background-color: #87CEFA;
+    background-color: #f0f0f0; 
     transform: scale(1.02);
 }
 

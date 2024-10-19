@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { db } from '../firebase/firebaseConfig';
-import { collection, getDocs, deleteDoc, onSnapshot, getDoc, updateDoc, doc} from 'firebase/firestore';
+import { collection, getDocs, deleteDoc, onSnapshot, getDoc, updateDoc, doc } from 'firebase/firestore';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
-import './misRentas.css'
+import './misRentas.css';
+import { Link } from 'react-router-dom';
 
 const auth = getAuth();
 
@@ -45,7 +46,6 @@ const MisRentas = () => {
 
     await updateDoc(vehiculoRef, vehiculoActualizado);
 
-    // Elimina la renta del vehículo
     const rentasCollection = collection(db, 'rentas');
     const querySnapshot = await getDocs(rentasCollection);
     const renta = querySnapshot.docs.find((doc) => doc.data().vehiculo === vehiculo.id);
@@ -62,6 +62,12 @@ const MisRentas = () => {
 
   return (
     <div className="mis-rentas-container">
+      <header>
+        <nav>
+          <Link to="/home">Inicio</Link> | 
+          <Link to="/cliente/vehiculos">Vehículos Disponibles</Link>
+        </nav>
+      </header>
       <h1 className="titulo">Mis Alquileres</h1>
       <div className="vehiculos-list">
         {vehiculosRentados.length > 0 ? (

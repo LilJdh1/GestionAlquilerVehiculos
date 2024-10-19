@@ -14,9 +14,12 @@ import Bienvenida from './components/paginaInicio';
 import RegistrarCliente from './components/registrarCliente';
 import RegistrarAlquiler from './components/registrarAlquiler';
 import EstadisticasAlquileres from './components/estadisticasAlquileres';
+import GenerarFactura from './components/GenerarFactura'; 
+import "jspdf-autotable";
 
 function App() {
   const [usuario, setUsuario] = useState(null);
+  const [selectedVehicle, setSelectedVehicle] = useState(null); 
 
   const signOut = async () => {
     try {
@@ -29,7 +32,7 @@ function App() {
 
   useEffect(() => {
     const unsuscribe = onAuthStateChanged(auth, (usuarioFirebase) => {
-      console.log('estado de usuario: ', usuarioFirebase)
+      console.log('estado de usuario: ', usuarioFirebase);
       if (usuarioFirebase) {
         setUsuario(usuarioFirebase);
       } else {
@@ -39,15 +42,18 @@ function App() {
     return unsuscribe;
   }, []);
 
+  const onSelectVehicle = (vehiculo) => {
+    setSelectedVehicle(vehiculo); 
+  };
+
   return (
     <BrowserRouter>
       <Routes>
-        {/* Ruta para la página de bienvenida */}
+      
         <Route path="/" element={<Bienvenida />} />
-        
-        {/* Otras rutas protegidas por autenticación */}
         <Route path="/login" element={<Login />} />
-        <Route path="/home" element={usuario ? <Home /> : <Navigate to="/" />} />
+        <Route path="/home" element={usuario ? <Home selectedVehicle={selectedVehicle} /> : <Navigate to="/" />} />
+        <Route path="/generar-factura" element={usuario ? <GenerarFactura /> : <Navigate to="/" />} /> {/* Ruta para GenerarFactura */}
         <Route path="/admin/*" element={usuario ? <Admin signOut={signOut} /> : <Navigate to="/" />} />
         <Route path="/admin/vehiculos" element={usuario ? <InventarioVehiculos /> : <Navigate to="/" />} />
         <Route path="/admin/usuarios" element={usuario ? <Clientes /> : <Navigate to="/" />} />
@@ -55,11 +61,11 @@ function App() {
         <Route path="/admin/registrar-cliente" element={usuario ? <RegistrarCliente /> : <Navigate to="/" />} />
         <Route path="/admin/registrar-alquiler" element={usuario ? <RegistrarAlquiler /> : <Navigate to="/" />} />
         <Route path="/admin/estadisticas-alquileres" element={usuario ? <EstadisticasAlquileres /> : <Navigate to="/" />} />
-        <Route path="/cliente/vehiculos" element={usuario ? <VehiculosDisponibles /> : <Navigate to="/" />} />
+        <Route path="/cliente/vehiculos" element={usuario ? <VehiculosDisponibles onSelectVehicle={onSelectVehicle} /> : <Navigate to="/" />} />
         <Route path="/cliente/alquileres" element={usuario ? <MisRentas /> : <Navigate to="/" />} />
+        <Route path="/generar-factura" element={usuario ? <GenerarFactura /> : <Navigate to="/" />} />
+
         
-        
-        {/* Manejo de rutas no encontradas */}
         <Route path="*" element={<div>No encontrado</div>} />
       </Routes>
     </BrowserRouter>
