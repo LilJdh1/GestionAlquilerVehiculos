@@ -13,6 +13,8 @@ const VehiculosDisponibles = () => {
   const [showFormulario, setShowFormulario] = useState(false);
   const [vehiculoSeleccionado, setVehiculoSeleccionado] = useState(null);
   const [mensaje, setMensaje] = useState('');
+  const [searchTerm, setSearchTerm] = useState(''); // Estado para búsqueda
+  const [filterAvailable, setFilterAvailable] = useState(false); // Estado para filtrar por disponibilidad
 
   useEffect(() => {
     const fetchVehiculos = async () => {
@@ -34,7 +36,7 @@ const VehiculosDisponibles = () => {
     const rentasCollection = collection(db, 'rentas');
     const renta = {
       usuario: auth.currentUser.uid,
-      vehiculo: vehiculoSeleccionado.id,
+      vehiculo: datosAlquiler.vehiculo.id,
       fechaAlquiler: datosAlquiler.fechaAlquiler,
       fechaDevolucion: datosAlquiler.fechaDevolucion,
       numeroLicencia: datosAlquiler.numeroLicencia,
@@ -43,44 +45,78 @@ const VehiculosDisponibles = () => {
     
     await addDoc(rentasCollection, renta);
     
-    const vehiculoRef = doc(db, 'vehiculos', vehiculoSeleccionado.id);
-    const vehiculoActualizado = { ...vehiculoSeleccionado, disponible: false };
+    const vehiculoRef = doc(db, 'vehiculos', datosAlquiler.vehiculo.id);
+    const vehiculoActualizado = { ...datosAlquiler.vehiculo, disponible: false };
     
     await updateDoc(vehiculoRef, vehiculoActualizado);
-    setMensaje(`El vehículo ${vehiculoSeleccionado.marca} ${vehiculoSeleccionado.modelo} ha sido rentado`);
+    setMensaje(`El vehículo ${datosAlquiler.vehiculo.marca} ${datosAlquiler.vehiculo.modelo} ha sido rentado`);
     
     setTimeout(() => {
       setMensaje('');
+      setShowFormulario(false);
     }, 3000);
   };
 
+  // Función para filtrar vehículos por búsqueda y disponibilidad
+  const filteredVehiculos = vehiculos.filter((vehiculo) => {
+    const matchesSearch = vehiculo.marca.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                          vehiculo.modelo.toLowerCase().includes(searchTerm.toLowerCase());
+
+    const matchesAvailability = filterAvailable ? vehiculo.disponible : true;
+
+    return matchesSearch && matchesAvailability;
+  });
+
   return (
     <div className="vehiculos-container">
-      <h1>Vehículos disponibles</h1>
+      <header>
+        <nav>
+          <Link to="/home">Inicio</Link> | 
+          <Link to="/cliente/alquileres">Mis Alquileres</Link>
+        </nav>
+      </header>
+
+      {/* Campo de búsqueda y checkbox para filtrar */}
+      <div className="filtros">
+        <input
+          type="text"
+          placeholder="Buscar por marca o modelo..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          className="search-input"
+        />
+        <label>
+          <input
+            type="checkbox"
+            checked={filterAvailable}
+            onChange={(e) => setFilterAvailable(e.target.checked)}
+          />
+          Mostrar solo disponibles
+        </label>
+      </div>
+
       <ul className="vehiculos-list">
-        {vehiculos.map((vehiculo) => (
+        {filteredVehiculos.map((vehiculo) => (
           <li key={vehiculo.id} className="vehiculo-item">
             <h2>{vehiculo.marca} {vehiculo.modelo}</h2>
             <p>{vehiculo.descripcion}</p>
             <img src={vehiculo.imagen} alt={vehiculo.modelo} className="vehiculo-imagen" />
-            <div className="button-container"> {/* Contenedor para el botón */}
+            <div className="button-container">
               {vehiculo.disponible ? (
                 <button className="rentar-button" onClick={() => handleRenta(vehiculo)}>Rentar</button>
               ) : (
                 <p className="no-disponible">No disponible</p>
               )}
             </div>
-            <Link to="/home">
-            <button>Volver a la página de inicio</button>
-            </Link>
           </li>
-          
         ))}
       </ul>
+
       {showFormulario && (
         <FormularioAlquiler
           vehiculo={vehiculoSeleccionado}
           handleRenta={handleRentaSubmit}
+          vehiculosDisponibles={vehiculos}            
         />
       )}
 

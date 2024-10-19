@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { db, auth } from "../firebase/firebaseConfig";
-import { getFirestore, collection, getDocs } from 'firebase/firestore';
+import { collection, getDocs } from 'firebase/firestore';
 import { Link, useNavigate } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
 import './home.css';
 
-
 const Home = () => {
   const [vehiculos, setVehiculos] = useState([]);
+  const [datosAlquiler, setDatosAlquiler] = useState(null); 
   const navigate = useNavigate();
 
   const handleLogout = async () => {
@@ -23,11 +23,24 @@ const Home = () => {
     const vehiculosCollectionRef = collection(db, 'vehiculos');
     const getVehiculos = async () => {
       const querySnapshot = await getDocs(vehiculosCollectionRef);
-      const vehiculos = querySnapshot.docs.map((doc) => doc.data());
+      const vehiculos = querySnapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
       setVehiculos(vehiculos);
     };
     getVehiculos();
   }, []);
+
+  const handleRenta = (datos) => {
+    setDatosAlquiler(datos);
+    alert("Alquiler confirmado. Puedes generar la factura.");
+  };
+
+  const handleGenerateInvoice = () => {
+    if (datosAlquiler) {
+      navigate('/generar-factura', { state: { datosAlquiler } });
+    } else {
+      alert("No hay datos de alquiler disponibles. Asegúrate de completar un alquiler primero.");
+    }
+  };
 
   return (
     <div className="home-container">
