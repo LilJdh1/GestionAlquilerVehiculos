@@ -11,6 +11,7 @@ const FormularioAlquiler = ({ vehiculo, handleRenta }) => {
   const [vehiculoSeleccionado, setVehiculoSeleccionado] = useState(vehiculo || '');
   const [precio, setPrecio] = useState(vehiculo ? vehiculo.precio : 0);
   const [costoTotal, setCostoTotal] = useState(0);
+  const [error, setError] = useState('');
 
   useEffect(() => {
     if (vehiculo) {
@@ -29,9 +30,29 @@ const FormularioAlquiler = ({ vehiculo, handleRenta }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    const diaActual = new Date();
+    diaActual.setHours(0, 0, 0, 0);
+    const fechaInicioObj = new Date(fechaAlquiler);
+    fechaInicioObj.setHours(0, 0, 0, 0);
+
+    const fechaFinObj = new Date(fechaDevolucion);
+
+    
+    if (fechaInicioObj < diaActual) {
+      setError('La fecha del alquiler no puede ser anterior a la fecha actual');
+      return;
+    }
+
+    
+    if (fechaFinObj < fechaInicioObj) {
+      setError('La fecha de devolución no puede ser anterior a la fecha de alquiler');
+      return;
+    }
+
+    setError('');
     const dias = calcularDias(fechaAlquiler, fechaDevolucion);
     const costo = dias * precio;
-    setCostoTotal(costo);
+    setCostoTotal(costo); 
 
     const datosAlquiler = {
       numeroLicencia,
@@ -44,8 +65,6 @@ const FormularioAlquiler = ({ vehiculo, handleRenta }) => {
     };
 
     handleRenta(datosAlquiler);
-    
-   
     navigate('/generar-factura', { state: { datosAlquiler } });
   };
 
@@ -85,6 +104,7 @@ const FormularioAlquiler = ({ vehiculo, handleRenta }) => {
             value={fechaAlquiler}
             onChange={(event) => setFechaAlquiler(event.target.value)}
             required
+            min={new Date().toISOString().split('T')[0]}
           />
         </div>
         <div className="form-group">
@@ -102,9 +122,8 @@ const FormularioAlquiler = ({ vehiculo, handleRenta }) => {
           <input
             type="number"
             id="precio"
-            value={precio}
+            value={precio} 
             onChange={(event) => setPrecio(event.target.value)}
-            required
           />
         </div>
         <div className="form-group">
@@ -117,6 +136,7 @@ const FormularioAlquiler = ({ vehiculo, handleRenta }) => {
           />
         </div>
         <button type="submit" className="submit-button">Confirmar Alquiler</button>
+        {error && <p style={{color: 'red'}}>{error}</p>}
       </form>
     </div>
   );
