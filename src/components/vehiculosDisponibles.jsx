@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { db } from '../firebase/firebaseConfig';
 import { collection, getDocs, doc, updateDoc, addDoc } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
@@ -16,6 +16,9 @@ const VehiculosDisponibles = () => {
   const [searchTerm, setSearchTerm] = useState(''); // Estado para búsqueda
   const [filterAvailable, setFilterAvailable] = useState(false); // Estado para filtrar por disponibilidad
 
+  
+  const formularioRef = useRef(null);
+
   useEffect(() => {
     const fetchVehiculos = async () => {
       const vehiculosCollection = collection(db, 'vehiculos');
@@ -30,6 +33,10 @@ const VehiculosDisponibles = () => {
   const handleRenta = (vehiculo) => {
     setVehiculoSeleccionado(vehiculo);
     setShowFormulario(true);
+
+    if(formularioRef.current){
+      formularioRef.current.scrollIntoView({behavior:'smooth'});
+    }
   };
 
   const handleRentaSubmit = async (datosAlquiler) => {
@@ -113,11 +120,13 @@ const VehiculosDisponibles = () => {
       </ul>
 
       {showFormulario && (
+        <div ref ={formularioRef}>
         <FormularioAlquiler
           vehiculo={vehiculoSeleccionado}
           handleRenta={handleRentaSubmit}
           vehiculosDisponibles={vehiculos}            
         />
+        </div>
       )}
 
       {mensaje && <p className="mensaje">{mensaje}</p>}
