@@ -1,4 +1,3 @@
-// GenerarFactura.jsx
 import React from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import jsPDF from 'jspdf';
@@ -6,7 +5,7 @@ import 'jspdf-autotable';
 import { signOut } from 'firebase/auth';
 import { auth } from '../firebase/firebaseConfig';
 import { useNavigate } from 'react-router-dom';
-import './generarFactura.css'; // Importa el CSS
+import './generarFactura.css'; 
 
 const GenerarFactura = () => {
   const location = useLocation();

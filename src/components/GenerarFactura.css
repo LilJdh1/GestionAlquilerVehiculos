@@ -19,21 +19,21 @@
     background-attachment: fixed;
   }
   
-  /* Mantén el estilo original del header y su nav */
+  
   header {
-    /* No se aplica ningún cambio aquí */
+   
   }
   
   header nav {
-    /* No se aplica ningún cambio aquí */
+    
   }
   
   .nav-button,
   .logout-button {
-    /* No se aplica ningún cambio aquí */
+    
   }
   
-  /* Sección de agradecimiento centrada */
+  
   .agradecimiento {
     text-align: center;
     background-color: #ffffff;
@@ -41,7 +41,7 @@
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 600px;
-    margin-top: 100px; /* Añade espacio para evitar que la sección cubra el encabezado */
+    margin-top: 100px; 
   }
   
   .agradecimiento h2 {

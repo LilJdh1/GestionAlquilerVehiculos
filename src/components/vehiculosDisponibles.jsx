@@ -64,7 +64,7 @@ const VehiculosDisponibles = () => {
     }, 3000);
   };
 
-  // Función para filtrar vehículos por búsqueda y disponibilidad
+  
   const filteredVehiculos = vehiculos.filter((vehiculo) => {
     const matchesSearch = vehiculo.marca.toLowerCase().includes(searchTerm.toLowerCase()) ||
                           vehiculo.modelo.toLowerCase().includes(searchTerm.toLowerCase());
@@ -83,7 +83,7 @@ const VehiculosDisponibles = () => {
         </nav>
       </header>
 
-      {/* Campo de búsqueda y checkbox para filtrar */}
+      
       <div className="filtros">
         <input
           type="text"
