@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, getAuth, signOut } from 'firebase/auth';
+import {  getAuth, signOut } from 'firebase/auth';
 import React from 'react';
 import { Link, Route, Routes } from 'react-router-dom';
 import Clientes from './clientes';
@@ -6,6 +6,7 @@ import InventarioVehiculos from './inventarioVehiculos';
 import Alquileres from './Alquileres';
 import './administrador.css'; 
 import RegistrarCliente from './registrarCliente';
+import RegistrarAdmin from './registrarAdmin';
 
 const auth = getAuth();
 const Administrador = () => {
@@ -21,6 +22,7 @@ const Administrador = () => {
           <Link to="/admin/registrar-cliente" className="admin-button">Registrar Cliente</Link>
           <Link to="/admin/registrar-alquiler" className="admin-button">Registrar Alquiler</Link>
           <Link to="/admin/estadisticas-alquileres" className="admin-button">Estadísticas de alquileres</Link>
+          <Link to="/admin/registrar-admin" className='admin-button'>Registrar Administrador</Link>
         </div>
         <button className="logout-button" onClick={() => signOut(auth)}>Cerrar sesión</button>
       </form>
@@ -29,6 +31,7 @@ const Administrador = () => {
         <Route path='/admin/vehiculos' element={<InventarioVehiculos />} />
         <Route path='/admin/alquileres' element={<Alquileres />} />
         <Route path='/admin/registrar-cliente' element={<RegistrarCliente />} />
+        <Route path="/admin/registrar-admin" element={<RegistrarAdmin />} />
       </Routes>
     </div>
   );

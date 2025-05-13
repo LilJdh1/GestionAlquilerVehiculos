@@ -1,57 +1,75 @@
-
 import React, { useState } from "react";
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth';
 import { db } from '../firebase/firebaseConfig';
 import { collection, addDoc, getDocs } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
-import './login.css';  
+import './login.css';
 
 const auth = getAuth();
 
 const Login = () => {
   const navigate = useNavigate();
   const [registrando, setRegistrando] = useState(false);
-  const [rol, setRol] = useState('');
   const [campos, setCampos] = useState({});
   const [credenciales, setCredenciales] = useState({ email: '', password: '' });
 
   const functAuthentication = async (e) => {
     e.preventDefault();
+
     if (registrando) {
       try {
-        const userCredential = await createUserWithEmailAndPassword(auth, campos.correo, campos.contraseña);
+        // Crear usuario en Firebase Auth
+        const userCredential = await createUserWithEmailAndPassword(
+          auth,
+          campos.correo,
+          campos.contraseña
+        );
+
+        // Registrar usuario en Firestore con rol fijo 'cliente'
         const usuario = {
           uid: userCredential.user.uid,
-          rol: rol,
+          rol: 'cliente',
           ...campos,
         };
-        const usuariosCollection = collection(db, 'usuarios');
-        await addDoc(usuariosCollection, usuario);
-        console.log('Usuario registrado con éxito');
-        navigate('/home');
+        await addDoc(collection(db, 'usuarios'), usuario);
+
+        console.log('Cliente registrado con éxito');
+        setRegistrando(false); // volver al login
       } catch (error) {
         console.error('Error al registrar usuario:', error);
       }
     } else {
       try {
-        const userCredential = await signInWithEmailAndPassword(auth, credenciales.email, credenciales.password);
+        const userCredential = await signInWithEmailAndPassword(
+          auth,
+          credenciales.email,
+          credenciales.password
+        );
         const user = userCredential.user;
+
+        // Obtener rol desde Firestore
         const usuariosCollection = collection(db, 'usuarios');
         const querySnapshot = await getDocs(usuariosCollection);
         const usuario = querySnapshot.docs.find((doc) => doc.data().uid === user.uid);
-        if (usuario.data().rol === 'administrador') {
+
+        if (!usuario) {
+          console.error('Usuario no encontrado en Firestore');
+          return;
+        }
+
+        const rol = usuario.data().rol;
+
+        if (rol === 'administrador') {
           navigate('/admin');
-        } else if (usuario.data().rol === 'cliente') {
+        } else if (rol === 'cliente') {
           navigate('/home');
+        } else {
+          console.error('Rol desconocido:', rol);
         }
       } catch (error) {
         console.error('Error al iniciar sesión:', error);
       }
     }
-  };
-
-  const handleRolChange = (e) => {
-    setRol(e.target.value);
   };
 
   const handleCampoChange = (e) => {
@@ -65,33 +83,16 @@ const Login = () => {
   return (
     <div className="login-container">
       <form className="login-form" onSubmit={functAuthentication}>
-        <h2>{registrando ? 'Registro' : 'Iniciar sesión'}</h2>
+        <h2>{registrando ? 'Registro de Cliente' : 'Iniciar sesión'}</h2>
+
         {registrando ? (
           <>
-            <select value={rol} onChange={handleRolChange} className="input-field">
-              <option value="">Seleccione un rol</option>
-              <option value="administrador">Administrador</option>
-              <option value="cliente">Cliente</option>
-            </select>
-            {rol === 'administrador' && (
-              <>
-                <input type="text" name="nombre" placeholder="Nombre" value={campos.nombre} onChange={handleCampoChange} className="input-field" />
-                <input type="text" name="apellido" placeholder="Apellido" value={campos.apellido} onChange={handleCampoChange} className="input-field" />
-                <input type="email" name="correo" placeholder="Correo" value={campos.correo} onChange={handleCampoChange} className="input-field" />
-                <input type="password" name="contraseña" placeholder="Contraseña" value={campos.contraseña} onChange={handleCampoChange} className="input-field" />
-                <input type="text" name="inventario" placeholder="Inventario" value={campos.inventario} onChange={handleCampoChange} className="input-field" />
-              </>
-            )}
-            {rol === 'cliente' && (
-              <>
-                <input type="text" name="identificacion" placeholder="Identificación" value={campos.identificacion} onChange={handleCampoChange} className="input-field" />
-                <input type="text" name="nombre" placeholder="Nombre" value={campos.nombre} onChange={handleCampoChange} className="input-field" />
-                <input type="text" name="apellido" placeholder="Apellido" value={campos.apellido} onChange={handleCampoChange} className="input-field" />
-                <input type="text" name="telefono" placeholder="Teléfono" value={campos.telefono} onChange={handleCampoChange} className="input-field" />
-                <input type="email" name="correo" placeholder="Correo" value={campos.correo} onChange={handleCampoChange} className="input-field" />
-                <input type="password" name="contraseña" placeholder="Contraseña" value={campos.contraseña} onChange={handleCampoChange} className="input-field" />
-              </>
-            )}
+            <input type="text" name="identificacion" placeholder="Identificación" value={campos.identificacion || ''} onChange={handleCampoChange} className="input-field" />
+            <input type="text" name="nombre" placeholder="Nombre" value={campos.nombre || ''} onChange={handleCampoChange} className="input-field" />
+            <input type="text" name="apellido" placeholder="Apellido" value={campos.apellido || ''} onChange={handleCampoChange} className="input-field" />
+            <input type="text" name="telefono" placeholder="Teléfono" value={campos.telefono || ''} onChange={handleCampoChange} className="input-field" />
+            <input type="email" name="correo" placeholder="Correo" value={campos.correo || ''} onChange={handleCampoChange} className="input-field" />
+            <input type="password" name="contraseña" placeholder="Contraseña" value={campos.contraseña || ''} onChange={handleCampoChange} className="input-field" />
           </>
         ) : (
           <>
@@ -99,16 +100,17 @@ const Login = () => {
             <input type="password" name="password" placeholder="Contraseña" value={credenciales.password} onChange={handleCredencialesChange} className="input-field" />
           </>
         )}
+
         <button type="submit" className="submit-button">
-          {registrando ? 'Registrar' : 'Iniciar sesión'}
+          {registrando ? 'Registrar Cliente' : 'Iniciar sesión'}
         </button>
-        <button onClick={() => setRegistrando(!registrando)} className="toggle-button">
-          {registrando ? '¿Ya tienes cuenta?' : '¿No tienes cuenta?'}
+
+        <button type="button" onClick={() => setRegistrando(!registrando)} className="toggle-button">
+          {registrando ? '¿Ya tienes cuenta? Iniciar sesión' : '¿No tienes cuenta? Registrarse'}
         </button>
       </form>
     </div>
   );
-  
 };
 
 export default Login;

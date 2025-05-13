@@ -7,7 +7,7 @@ import './registroCliente.css';
 const RegistrarCliente = () => {
   const [nombre, setNombre] = useState('');
   const [apellido, setApellido] = useState('');
-  const [email, setEmail] = useState('');
+  const [correo, setCorreo] = useState('');
   const [telefono, setTelefono] = useState('');
   const [password, setPassword] = useState('');
   const [mensaje, setMensaje] = useState('');
@@ -15,7 +15,7 @@ const RegistrarCliente = () => {
   const handleRegistro = async (event) => {
     event.preventDefault();
     try {
-      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      const userCredential = await createUserWithEmailAndPassword(auth, correo, password);
       const user = userCredential.user;
 
       const clienteData = {
@@ -23,7 +23,7 @@ const RegistrarCliente = () => {
         nombre,
         password,
         apellido,
-        email,
+        correo,
         telefono,
         rol: 'cliente', // Asignar rol como cliente
       };
@@ -40,7 +40,7 @@ const RegistrarCliente = () => {
   const resetFormulario = () => {
     setNombre('');
     setApellido('');
-    setEmail('');
+    setCorreo('');
     setTelefono('');
     setPassword('');
   };
@@ -59,7 +59,7 @@ const RegistrarCliente = () => {
         </label>
         <label>
           Email:
-          <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+          <input type="email" value={correo} onChange={(e) => setCorreo(e.target.value)} required />
         </label>
         <label>
           Teléfono:

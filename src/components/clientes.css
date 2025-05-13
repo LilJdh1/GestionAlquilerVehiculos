@@ -39,7 +39,7 @@
 .clientes-table th,
 .clientes-table td {
     padding: 12px 15px;
-    text-align: left;
+    text-align: center;
 }
 
 .clientes-table th {
@@ -57,6 +57,11 @@
 
 .clientes-table tr:hover {
     background-color: rgba(70, 130, 180, 0.2); 
+}
+
+.eliminar-button {
+    background-color: #ff0000;
+    align-items: center;
 }
 
 .loading {
