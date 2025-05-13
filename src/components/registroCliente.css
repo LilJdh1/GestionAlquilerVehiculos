@@ -96,7 +96,7 @@ button:hover {
     font-weight: bold;
 }
 
-/* Media Queries */
+
 @media (max-width: 768px) {
     .registrar-cliente-form {
         padding: 20px;

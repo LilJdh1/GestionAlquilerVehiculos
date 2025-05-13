@@ -79,7 +79,7 @@ const InventarioVehiculos = () => {
         tamaño,
         imagen: imagenUrl,
       });
-      // Update the edited vehicle state
+      
       setVehiculos(vehiculos.map(v => (v.id === vehiculoEditar.id ? { ...v, marca, modelo, año, descripcion, tamaño, imagen: imagenUrl } : v)));
       resetFormulario();
     } catch (error) {
@@ -120,7 +120,6 @@ const InventarioVehiculos = () => {
       <h1 className="inventario-title">Inventario De Vehículos</h1>
 
       <div className="inventario-layout">
-        {/* Tabla de vehículos */}
         <div className="tabla-vehiculos">
           <table className="vehiculos-table">
             <thead>
@@ -158,7 +157,6 @@ const InventarioVehiculos = () => {
           </table>
         </div>
 
-        {/* Formulario de agregar y editar */}
         <div className="form-container">
           <h2>{vehiculoEditar ? "Editar Vehículo" : "Agregar Vehículo"}</h2>
           <form className="vehiculo-form">

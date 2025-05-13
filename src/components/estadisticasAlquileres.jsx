@@ -56,7 +56,7 @@ const EstadisticasAlquileres = () => {
       alquileres.forEach((alquiler) => {
         const fechaAlquilerDate = new Date(alquiler.fechaInicio);
         const dia = fechaAlquilerDate.getDate();
-        const mes = fechaAlquilerDate.getMonth() + 1; // +1 porque los meses son 0-indexed
+        const mes = fechaAlquilerDate.getMonth() + 1; 
         const año = fechaAlquilerDate.getFullYear();
 
         estadisticasCalculadas.alquileresPorDia[dia] = (estadisticasCalculadas.alquileresPorDia[dia] || 0) + 1;
